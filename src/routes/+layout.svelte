@@ -81,20 +81,20 @@
 
 <style>
 @keyframes star-slow {
-	from { transform: translate3d(0,0,0) rotate(0.01deg); opacity: 0.4;}
-	to { transform: translate3d(-10px, -5px, 0) rotate(-0.01deg); opacity: 1;}
+	from { transform: translate3d(0, 0, 0) rotate(0.2deg); opacity: 0.4;}
+	to { transform: translate3d(-10px, -5px, 0) rotate(-0.2deg); opacity: 1;}
 }
 
 
 @keyframes star-medium {
-	from { transform: translate3d(0,0,0) rotate(0.01deg); opacity: 0.4;}
-	to { transform: translate3d(-20px, -10px, 0) rotate(-0.01deg); opacity: 1;}
+	from { transform: translate3d(0, 0, 0) rotate(0.2deg); opacity: 0.4;}
+	to { transform: translate3d(-20px, -10px, 0) rotate(-0.2deg); opacity: 1;}
 }
 
 
 @keyframes star-fast {
-	from { transform: translate3d(0,0,0) rotate(0.01deg); opacity: 0.4;}
-	to { transform: translate3d(-30px, -15px, 0) rotate(-0.01deg); opacity: 1;}
+	from { transform: translate3d(0, 0, 0) rotate(0.2deg); opacity: 0.4;}
+	to { transform: translate3d(-30px, -15px, 0) rotate(-0.2deg); opacity: 1;}
 }
 
 .space {
@@ -135,4 +135,17 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-{@render children()}
+<!-- Scale Head<->Content<->Foot correctly -->
+<div class="min-h-screen flex flex-col">
+	<header class="text-center p-4 bg-gray-800 text-white text-5xl font-semibold border-b border-gray-700">
+		Header
+	</header>
+
+	<main class="grow px-4 md:px-8 lg:px-16">
+		{@render children()}
+	</main>
+
+	<footer class="text-center p-4 text-sm text-gray-500">
+		Footer
+	</footer>
+</div>
