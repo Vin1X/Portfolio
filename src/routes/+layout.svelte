@@ -133,6 +133,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
 </svelte:head>
 
 <!-- Scale Head<->Content<->Foot correctly -->
