@@ -3,7 +3,7 @@
   export let content = '';
 </script>
 
-<div class="p-2 border-2 border-gray-300 bg-gray-500 bg-opacity-75 rounded-md">
+<div class="my-4 p-2 border-2 border-gray-300 bg-gray-500 bg-opacity-75 rounded-md">
   <h2 class="font-semibold">
     {#if $$slots.heading}
       <slot name="heading" />
