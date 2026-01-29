@@ -1,5 +1,7 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
+    import {base} from '$app/paths';
+
 
 	let { children } = $props();
 	import "../app.css";
@@ -142,7 +144,7 @@
 		Header
 	</header>
 
-	<main class="grow px-4 md:px-8 lg:px-16">
+	<main class="grow p-4 md:px-8 lg:px-16">
 		{@render children()}
 	</main>
 
