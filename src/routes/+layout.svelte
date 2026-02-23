@@ -1,11 +1,23 @@
 <script lang="ts">
-	import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from "flowbite-svelte";
+	import { Footer, FooterCopyright, FooterLinkGroup, FooterLink} from "flowbite-svelte";
 	import favicon from '$lib/assets/favicon.svg';
     import {base} from '$app/paths';
+	import { page } from '$app/stores';
 
 
 	let { children } = $props();
 	import "../app.css";
+
+	// SEO - Set page title and description
+	$effect(() => {
+		if (typeof document !== 'undefined') {
+			document.title = $page.data?.title || 'Portfolio';
+			const metaDescription = document.querySelector('meta[name="description"]');
+			if (metaDescription) {
+				metaDescription.setAttribute('content', $page.data?.description || 'Portfolio');
+			}
+		}
+	});
 
 	// Background
 	import {onMount} from 'svelte';
@@ -115,15 +127,15 @@
 }
 
 .star-layer.slow {
-	animation: star-slow 30s linear infinite alternate;
+	animation: star-slow 25s linear infinite alternate;
 }
 
 .star-layer.medium {
-	animation: star-medium 15s linear infinite alternate;
+	animation: star-medium 12s linear infinite alternate;
 }
 
 .star-layer.fast {
-	animation: star-fast 10s linear infinite alternate;
+	animation: star-fast 8s linear infinite alternate;
 }
 
 .star {
@@ -141,8 +153,9 @@
 
 <!-- Scale Head<->Content<->Foot correctly -->
 <div class="min-h-screen flex flex-col">
-	<header class="text-center p-4 bg-gray-800 text-white text-5xl font-semibold border-b border-gray-700">
-		Header
+	<header class="flex justify-start items-center w-full p-4 bg-gray-800 text-white text-4xl font-semibold border-b border-gray-700 gap-8">
+		<a class="block" href="{base}/">Home</a>
+		<a class="block" href="{base}/projects">Projects</a>
 	</header>
 
 	<main class="grow p-4 md:px-8 lg:px-16">
@@ -151,11 +164,9 @@
 
 	<Footer class="bg-transparent">
 		<FooterCopyright by="Vincent Walura." year={2026} />
-		<FooterLinkGroup class="mt-3 flex flex-wrap items-center text-sm text-gray-500 sm:mt-0 dark:text-gray-400">
-			<FooterLink href="/">About</FooterLink>
-			<FooterLink href="/">Privacy Policy</FooterLink>
-			<FooterLink href="/">Licensing</FooterLink>
-			<FooterLink href="/">Contact</FooterLink>
+		<FooterLinkGroup class="mt-3 flex flex-wrap items-center text-sm sm:mt-0 text-gray-500 dark:text-gray-400">
+			<FooterLink href="{base}/">Home</FooterLink>
+			<FooterLink href="{base}/projects">Projects</FooterLink>
 		</FooterLinkGroup>
 	</Footer>
 </div>
