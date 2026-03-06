@@ -9,18 +9,48 @@
     ChevronDoubleUpOutline,
     ChevronDoubleDownOutline,
   } from "flowbite-svelte-icons";
-  import ptb_1_img1 from "$lib/assets/project_images/ptb_1/image.png";
-  import ptb_1_img2 from "$lib/assets/project_images/ptb_1/image copy.png";
-  const images_ptb_1 = [
+  import ptb_1_io4 from "$lib/assets/project_images/ptb_1/io4.png";
+  import ptb_1_cloud from "$lib/assets/project_images/ptb_1/cloudwatch.png";
+  import ptb_1_datadog from "$lib/assets/project_images/ptb_1/datadog.png";
+  import ptb_1_datadog2 from "$lib/assets/project_images/ptb_1/datadog2.png";
+  import ptb_1_rawlogs from "$lib/assets/project_images/ptb_1/rawlogs.png";
+  import ptb_1_uart from "$lib/assets/project_images/ptb_1/uart.png";
+  import ptb_1_draft from "$lib/assets/project_images/ptb_1/Entwurf.png";
+  const images_ptb_1: { id: string; src: string; alt: string }[] = [
     {
-      id: 0,
-      src: ptb_1_img1,
-      alt: "PTB 1 - Image 1",
+      id: "0",
+      src: ptb_1_io4,
+      alt: "The MSA Altair iO4.",
     },
     {
-      id: 1,
-      src: ptb_1_img2,
-      alt: "PTB 1 - Image 2",
+      id: "1",
+      src: ptb_1_draft,
+      alt: "Draft of system architecture and workflow.",
+    },
+    {
+      id: "2",
+      src: ptb_1_rawlogs,
+      alt: "The raw logs read from the Altair io4.",
+    },
+    {
+      id: "3",
+      src: ptb_1_cloud,
+      alt: "The logs after streaming to the cloud in CloudWatch.",
+    },
+    {
+      id: "4",
+      src: ptb_1_datadog,
+      alt: "The logs after forwarding to DataDog.",
+    },
+    {
+      id: "5",
+      src: ptb_1_datadog2,
+      alt: "Example of DataDog visualization of a log entry.",
+    },
+    {
+      id: "6",
+      src: ptb_1_uart,
+      alt: "UART protocol.",
     },
   ];
 </script>
@@ -32,7 +62,7 @@ Task: What was your specific goal?
 Action: What code/tools did you use? (e.g., "Implemented a multi-threaded buffer in C++").
 Result: Did it run 20% faster? Did you get an 'A'?
 -->
-<div class="my-6 p-4 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <h2 class="font-semibold text-center">
     These are my most interesting projects that I've worked on during either
     work or as a university project.<br />All of them were done for several
@@ -41,7 +71,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
   </h2>
 </div>
 
-<div class="my-6 p-4 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
     <span class="text-2xl font-semibold">Praxistransferbericht 1<br /></span>
     <AccordionItem class="text-white flex flex-col justify-between">
@@ -55,71 +85,66 @@ Result: Did it run 20% faster? Did you get an 'A'?
       {#snippet arrowdown()}<ChevronDoubleDownOutline
           class="h-6 w-6 text-[#f0f0f0]"
         />{/snippet}
-      <div
-        class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-start mt-6"
-      >
-        <div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+        <div class="md:col-span-1 md:row-span-2">
           <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <p>
-            Embedded devices often have a "blind spot" in the cloud. To save
-            costs and bandwidth, they only send simplified status updates. When
-            a critical error occurs, the high-detail log data (precise
-            timestamps, raw message types, and full payloads) is only available
-            locally via a serial interface. This makes remote debugging
-            difficult and requires manual, on-site intervention to extract
-            detailed error reports.
+            Embedded devices typically transmit only minimal status updates to
+            the cloud to minimize bandwidth and costs. High-fidelity
+            logs—including precise timestamps, raw message types, and full
+            payloads—were previously only accessible locally via serial
+            interfaces. This created a significant bottleneck for remote
+            debugging and cross-location collaboration, leading to increased
+            downtime.
             <br /><br />
             <span class="font-semibold text-[#7dd3fc]">Task</span>
             <br />
-            My objective was to bridge this gap by developing a bridge application.
-            The goal was to capture raw log data from an embedded device via a serial
-            interface (UART/Debug Board), stream it to a cloud environment, and enable
-            high-fidelity log comparison and error backtracking that is otherwise
-            impossible with standard telemetry.
+            My goal was to bridge this gap for the MSA ALTAIR io4 by developing a
+            Python-based application to capture raw log data from the device via
+            a serial interface, archive it locally, and stream it to a cloud environment.
+            This enables high-fidelity log comparison and error backtracking that
+            is impossible with standard telemetry.
           </p>
           <br />
-          <span class="font-semibold text-[#7dd3fc]">Action</span>
+          <span class="font-semibold text-[#7dd3fc]">Action</span><br />
+          I implemented a modular Python architecture to automate the entire data
+          pipeline:
           <ul class="list-disc list-inside ml-4">
             <li>
-              Data Acquisition: Implemented a listener to read raw data streams
-              from a Debug Board via a serial interface.
+              Data Acquisition: Developed a real-time listener using UART and
+              JTAG Debug Boards to capture logs and store them locally in a
+              structured format.
             </li>
             <li>
-              Pipeline Development: Designed a three-stage cloud integration
-              concept:
-            </li>
-            <li>Ingestion: Streaming raw log data from the local machine.</li>
-            <li>
-              Processing: Developed filters to parse and structure the "noisy"
-              raw logs into meaningful formats.
+              Streaming: Integrated the AWS SDK (Boto3) to stream data in
+              real-time to AWS CloudWatch, ensuring persistent cloud storage.
             </li>
             <li>
-              Visualization: Configured cloud-based evaluation tools to display
-              detailed message types and timing information.
+              Presentation & Analytics: Engineered a custom integration to
+              forward logs from CloudWatch to Datadog. I created specialized
+              dashboards to filter by message type (e.g., error codes) and
+              timestamps, transforming raw strings into actionable telemetry.
             </li>
-            <li>
-              Tools & Technologies: C/C++ (Embedded side), Python or Node.js
-              (Bridge/Scripting), Serial Communication Protocols, and Cloud
-              Storage/Analytics services.
-            </li>
+            <li>Technologies: Python, AWS CloudWatch, Datadog, UART, JTAG.</li>
           </ul>
-          <br />
-          <span class="font-semibold text-[#7dd3fc]">Result</span>
-          <p>
-            I successfully created a workflow that allows developers to perform
-            "Root Cause Analysis" remotely with the same level of detail as a
-            local debug session. This eliminates the need for manual device
-            checking and significantly reduces debugging time by providing full
-            visibility into message contents and timing—data that was previously
-            discarded to save on cloud costs.
-          </p>
         </div>
-        <div class="max-w-md mx-auto md:mx-0">
+        <div class="w-full md:col-span-1 md:row-span-1">
           {#if images_ptb_1.length > 0}
             <Carousel images={images_ptb_1}>
               <Controls />
             </Carousel>
           {/if}
+        </div>
+        <div class="md:col-span-1 md:row-span-1">
+          <span class="font-semibold text-[#7dd3fc]">Result</span>
+          <p>
+            The project fully automated the debugging workflow, allowing
+            developers to perform remote Root Cause Analysis with the same level
+            of detail as a local session. This eliminated manual data
+            distribution and significantly reduced issue resolution time by
+            providing immediate, global visibility into granular device
+            behavior.
+          </p>
         </div>
       </div>
     </AccordionItem>
@@ -142,7 +167,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
     filtern dieser Daten und schließlich das auswerten in der Cloud.
   -->
 
-<div class="my-6 p-4 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
     <span class="text-2xl font-semibold">Praxistransferbericht 2<br /></span>
     <AccordionItem class="text-white flex flex-col justify-between">
@@ -156,10 +181,9 @@ Result: Did it run 20% faster? Did you get an 'A'?
       {#snippet arrowdown()}<ChevronDoubleDownOutline
           class="h-6 w-6 text-[#f0f0f0]"
         />{/snippet}
-      <div
-        class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-start mt-6"
-      >
-        <div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+        <div class="md:col-span-1 md:row-span-2">
+          <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
             At MSA Technologies, a new product for the firefighting sector
             required extensive battery testing. However, testing with physical
@@ -168,6 +192,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             company’s automated internal test system, a way to simulate
             consistent and manipulatable battery behavior was needed.
           </div>
+          <span class="font-semibold text-[#7dd3fc]">Task</span>
           <div>
             My task was to design and implement a Battery Simulator that could
             mimic real-world battery states (voltage, temperature, discharge
@@ -176,6 +201,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             specific battery values to see how the firefighting equipment
             reacts.
           </div>
+          <span class="font-semibold text-[#7dd3fc]">Action</span>
           <div>
             Hardware Architecture: Developed a two-tier system using a Raspberry
             Pi Pico (Microcontroller) for the real-time battery logic and a
@@ -190,6 +216,16 @@ Result: Did it run 20% faster? Did you get an 'A'?
             simulator directly into the company’s internal automated testing
             framework.
           </div>
+        </div>
+        <div class="w-full md:col-span-1 md:row-span-1">
+          {#if images_ptb_1.length > 0}
+            <Carousel images={images_ptb_1}>
+              <Controls />
+            </Carousel>
+          {/if}
+        </div>
+        <div class="md:col-span-1 md:row-span-1">
+          <span class="font-semibold text-[#7dd3fc]">Result</span>
           <div>
             I successfully delivered a functional Battery Simulator and a
             corresponding test plugin. This system laid the foundation for all
@@ -199,13 +235,6 @@ Result: Did it run 20% faster? Did you get an 'A'?
             enabling the simulation of critical low-battery or error states
             safely.
           </div>
-        </div>
-        <div class="max-w-md mx-auto md:mx-0">
-          {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
-              <Controls />
-            </Carousel>
-          {/if}
         </div>
       </div>
     </AccordionItem>
@@ -228,7 +257,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
     firmeninternen Testsystems werden zusammen mit dem Simulatordesign erläutert.
   -->
 
-<div class="my-6 p-4 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
     <span class="text-2xl font-semibold">Praxistransferbericht 3<br /></span>
 
@@ -243,10 +272,9 @@ Result: Did it run 20% faster? Did you get an 'A'?
       {#snippet arrowdown()}<ChevronDoubleDownOutline
           class="h-6 w-6 text-[#f0f0f0]"
         />{/snippet}
-      <div
-        class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-start mt-6"
-      >
-        <div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+        <div class="md:col-span-1 md:row-span-2">
+          <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
             To validate firefighting communication devices, the team needed a
             way to run large-scale Hardware-in-the-Loop (HIL) tests. Testing
@@ -255,6 +283,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             create a stable, reproducible environment where 64 "Devices Under
             Test" (DUTs) could be controlled and updated simultaneously.
           </div>
+          <span class="font-semibold text-[#7dd3fc]">Task</span>
           <div>
             My objective was to build and automate a testing rack consisting of
             64 Raspberry Pi 4 nodes, each acting as a simulated firefighting
@@ -262,6 +291,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             communicate with every node, execute tests, and recover the entire
             system quickly in case of a software failure.
           </div>
+          <span class="font-semibold text-[#7dd3fc]">Action</span>
           <div>
             Network Infrastructure: Configured the network communication using
             SSH for remote command execution and DHCP for dynamic IP management
@@ -275,6 +305,16 @@ Result: Did it run 20% faster? Did you get an 'A'?
             technical documentation for the Linux control environment to ensure
             long-term maintainability by the engineering team.
           </div>
+        </div>
+        <div class="w-full md:col-span-1 md:row-span-1">
+          {#if images_ptb_1.length > 0}
+            <Carousel images={images_ptb_1}>
+              <Controls />
+            </Carousel>
+          {/if}
+        </div>
+        <div class="md:col-span-1 md:row-span-1">
+          <span class="font-semibold text-[#7dd3fc]">Result</span>
           <div>
             I successfully implemented a fully automated HIL test rack that
             significantly increased testing throughput. By moving from manual
@@ -284,13 +324,6 @@ Result: Did it run 20% faster? Did you get an 'A'?
             minutes, creating a "production-ready" test environment for
             safety-critical firefighting hardware.
           </div>
-        </div>
-        <div class="max-w-md mx-auto md:mx-0">
-          {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
-              <Controls />
-            </Carousel>
-          {/if}
         </div>
       </div>
     </AccordionItem>
@@ -314,7 +347,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
     Speicherabbilds sowie des Linux-Computers, wird detailliert beschrieben.
   -->
 
-<div class="my-6 p-4 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
     <span class="text-2xl font-semibold">Studienprojekt 1<br /></span>
 
@@ -330,10 +363,9 @@ Result: Did it run 20% faster? Did you get an 'A'?
       {#snippet arrowdown()}<ChevronDoubleDownOutline
           class="h-6 w-6 text-[#f0f0f0]"
         />{/snippet}
-      <div
-        class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-start mt-6"
-      >
-        <div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+        <div class="md:col-span-1 md:row-span-2">
+          <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
             The goal was to develop a robotic system capable of navigating
             unknown paths autonomously. The paths were defined by high-contrast
@@ -342,6 +374,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             ensure the robot could follow complex curves smoothly without losing
             the track.
           </div>
+          <span class="font-semibold text-[#7dd3fc]">Task</span>
           <div>
             I was tasked with evaluating various hardware approaches for motor
             control and sensor integration, and subsequently building a
@@ -349,6 +382,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             that could serve as a reliable baseline for future algorithmic
             optimizations.
           </div>
+          <span class="font-semibold text-[#7dd3fc]">Action</span>
           <div>
             Prototyping: Constructed the physical robot chassis using LEGO
             components, allowing for rapid iteration of sensor placement and
@@ -360,6 +394,16 @@ Result: Did it run 20% faster? Did you get an 'A'?
             different hardware setups to determine which provided the highest
             reliability and lowest latency during path tracking.
           </div>
+        </div>
+        <div class="w-full md:col-span-1 md:row-span-1">
+          {#if images_ptb_1.length > 0}
+            <Carousel images={images_ptb_1}>
+              <Controls />
+            </Carousel>
+          {/if}
+        </div>
+        <div class="md:col-span-1 md:row-span-1">
+          <span class="font-semibold text-[#7dd3fc]">Result</span>
           <div>
             I successfully developed a working prototype that accurately follows
             unknown paths. This project established a robust hardware and
@@ -368,13 +412,6 @@ Result: Did it run 20% faster? Did you get an 'A'?
             future developments in advanced control theory, such as PID
             (Proportional-Integral-Derivative) tuning.
           </div>
-        </div>
-        <div class="max-w-md mx-auto md:mx-0">
-          {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
-              <Controls />
-            </Carousel>
-          {/if}
         </div>
       </div>
     </AccordionItem>
@@ -393,7 +430,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
     werden kann.
   -->
 
-<div class="my-6 p-4 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
     <span class="text-2xl font-semibold">Studienprojekt 2<br /></span>
 
@@ -409,10 +446,9 @@ Result: Did it run 20% faster? Did you get an 'A'?
       {#snippet arrowdown()}<ChevronDoubleDownOutline
           class="h-6 w-6 text-[#f0f0f0]"
         />{/snippet}
-      <div
-        class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-start mt-6"
-      >
-        <div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+        <div class="md:col-span-1 md:row-span-2">
+          <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
             A previous study project had demonstrated the feasibility of SLAM
             (Simultaneous Localization and Mapping) using a Fischertechnik
@@ -421,6 +457,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             solution for the LiDAR sensor, leading to inconsistent data and poor
             system performance.
           </div>
+          <span class="font-semibold text-[#7dd3fc]">Task</span>
           <div>
             My objective was to transform this prototype into a
             professional-grade system. This involved two main tracks: Software:
@@ -428,6 +465,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             engineering practices. Hardware: Integrating a LiDAR sensor
             physically and logically into the robot's ecosystem.
           </div>
+          <span class="font-semibold text-[#7dd3fc]">Action</span>
           <div>
             Architectural Refactoring: Extracted existing procedural logic and
             restructured the entire codebase using Object-Oriented Programming
@@ -441,6 +479,16 @@ Result: Did it run 20% faster? Did you get an 'A'?
             for implementing advanced algorithms like RANSAC (Random Sample
             Consensus) for noise reduction and improved data association.
           </div>
+        </div>
+        <div class="w-full md:col-span-1 md:row-span-1">
+          {#if images_ptb_1.length > 0}
+            <Carousel images={images_ptb_1}>
+              <Controls />
+            </Carousel>
+          {/if}
+        </div>
+        <div class="md:col-span-1 md:row-span-1">
+          <span class="font-semibold text-[#7dd3fc]">Result</span>
           <div>
             I successfully delivered a high-quality, maintainable software
             framework for robotic mapping. The new OOP architecture
@@ -449,13 +497,6 @@ Result: Did it run 20% faster? Did you get an 'A'?
             consistent environmental data, establishing a reliable platform for
             advanced autonomous navigation research.
           </div>
-        </div>
-        <div class="max-w-md mx-auto md:mx-0">
-          {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
-              <Controls />
-            </Carousel>
-          {/if}
         </div>
       </div>
     </AccordionItem>
@@ -481,7 +522,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
     und Effizienz des Systems weiter zu steigern.
   -->
 
-<div class="my-6 p-4 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
     <span class="text-2xl font-semibold">Bachelorthesis<br /></span>
 
@@ -497,10 +538,9 @@ Result: Did it run 20% faster? Did you get an 'A'?
       {#snippet arrowdown()}<ChevronDoubleDownOutline
           class="h-6 w-6 text-[#f0f0f0]"
         />{/snippet}
-      <div
-        class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-start mt-6"
-      >
-        <div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+        <div class="md:col-span-1 md:row-span-2">
+          <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
             As production of the "MSA Hub" was relocated in-house, a new system
             was required to verify the hardware before it left the factory. The
@@ -509,6 +549,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             centralized, automated system to handle everything from firmware
             flashing to physical label printing.
           </div>
+          <span class="font-semibold text-[#7dd3fc]">Task</span>
           <div>
             My objective was to conceive, implement, and evaluate a
             comprehensive functional test system with a graphical user interface
@@ -516,6 +557,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             environment and simple enough to be operated by factory personnel
             with minimal training.
           </div>
+          <span class="font-semibold text-[#7dd3fc]">Action</span>
           <div>
             Software Architecture: Developed a modular software framework to
             handle diverse tasks like label scanning, firmware programming (for
@@ -530,6 +572,16 @@ Result: Did it run 20% faster? Did you get an 'A'?
             Long Range Radio (LRR) modules and Hub firmware to streamline the
             deployment process.
           </div>
+        </div>
+        <div class="w-full md:col-span-1 md:row-span-1">
+          {#if images_ptb_1.length > 0}
+            <Carousel images={images_ptb_1}>
+              <Controls />
+            </Carousel>
+          {/if}
+        </div>
+        <div class="md:col-span-1 md:row-span-1">
+          <span class="font-semibold text-[#7dd3fc]">Result</span>
           <div>
             I successfully delivered a production-ready test system that
             optimized the End-of-Line (EOL) testing phase. The modular design
@@ -538,13 +590,6 @@ Result: Did it run 20% faster? Did you get an 'A'?
             manual errors and ensured that every MSA Hub leaving the factory
             meets strict functional and firmware requirements.
           </div>
-        </div>
-        <div class="max-w-md mx-auto md:mx-0">
-          {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
-              <Controls />
-            </Carousel>
-          {/if}
         </div>
       </div>
     </AccordionItem>
@@ -566,7 +611,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
     Testsystem, das die Qualitätssicherung des MSA Hubs sicherstellt.
   -->
 
-<div class="my-6 p-4 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
     <span class="text-2xl font-semibold">University project<br /></span>
 
@@ -585,7 +630,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
         class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-start mt-6"
       >
         <div>a</div>
-        <div class="max-w-md mx-auto md:mx-0">
+        <div class="w-full">
           {#if images_ptb_1.length > 0}
             <Carousel images={images_ptb_1}>
               <Controls />
