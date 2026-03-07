@@ -4,6 +4,7 @@
     Accordion,
     Carousel,
     Controls,
+    CarouselIndicators,
   } from "flowbite-svelte";
   import {
     ChevronDoubleUpOutline,
@@ -16,6 +17,12 @@
   import ptb_1_rawlogs from "$lib/assets/project_images/ptb_1/rawlogs.png";
   import ptb_1_uart from "$lib/assets/project_images/ptb_1/uart.png";
   import ptb_1_draft from "$lib/assets/project_images/ptb_1/Entwurf.png";
+
+  import ptb_2_construction from "$lib/assets/project_images/ptb_2/ahud_aufbau_2.jpg";
+  import ptb_2_block from "$lib/assets/project_images/ptb_2/blockschalt.drawio.png";
+  import ptb_2_construction2 from "$lib/assets/project_images/ptb_2/ahud_aufbau_3.1.png";
+  import ptb_2_sequence from "$lib/assets/project_images/ptb_2/Sequence Fuel Gauge Simulator.drawio.png";
+  import ptb_2_block2 from "$lib/assets/project_images/ptb_2/i2c_hitl_support.drawio.png";
   const images_ptb_1: { id: string; src: string; alt: string }[] = [
     {
       id: "0",
@@ -53,6 +60,35 @@
       alt: "UART protocol.",
     },
   ];
+  const images_ptb_2: { id: string; src: string; alt: string }[] = [
+    {
+      id: "0",
+      src: ptb_2_construction,
+      alt: "The construction of the test setup with the battery simulator and the device under test (DUT).",
+    },
+    {
+      id: "1",
+      src: ptb_2_block,
+      alt: "Block diagram of the system architecture.",
+    },
+    {
+      id: "2",
+      src: ptb_2_construction2,
+      alt: "Another view of the test setup construction.",
+    },
+    {
+      id: "3",
+      src: ptb_2_sequence,
+      alt: "Sequence diagram of the fuel gauge simulator.",
+    },
+    {
+      id: "4",
+      src: ptb_2_block2,
+      alt: "Block diagram of the I2C HITL support.",
+    },
+  ];
+
+  let image: HTMLImgAttributes | undefined = $state();
 </script>
 
 <!--
@@ -130,10 +166,19 @@ Result: Did it run 20% faster? Did you get an 'A'?
         </div>
         <div class="w-full md:col-span-1 md:row-span-1">
           {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
+            <Carousel
+              images={images_ptb_1}
+              onchange={(detail) => (image = detail)}
+            >
               <Controls />
+              <CarouselIndicators />
             </Carousel>
           {/if}
+          <div
+            class="mt-2 rounded-sm bg-transparent p-2 text-center border-2 align-middle border-gray-300"
+          >
+            {image?.alt}
+          </div>
         </div>
         <div class="md:col-span-1 md:row-span-1">
           <span class="font-semibold text-[#7dd3fc]">Result</span>
@@ -185,41 +230,53 @@ Result: Did it run 20% faster? Did you get an 'A'?
         <div class="md:col-span-1 md:row-span-2">
           <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
-            At MSA Technologies, a new product for the firefighting sector
-            required extensive battery testing. However, testing with physical
-            batteries is slow, expensive, and difficult to replicate under
-            specific failure conditions. To integrate battery testing into the
-            company’s automated internal test system, a way to simulate
-            consistent and manipulatable battery behavior was needed.
+            Testing firefighting equipment with physical batteries is slow,
+            expensive, and difficult to replicate under specific failure
+            conditions. To integrate battery testing into MSA’s
+            Hardware-in-the-Loop (HITL), a solution was needed to simulate
+            consistent and manipulatable battery behavior without physical
+            hardware.
           </div>
+          <br />
           <span class="font-semibold text-[#7dd3fc]">Task</span>
           <div>
-            My task was to design and implement a Battery Simulator that could
-            mimic real-world battery states (voltage, temperature, discharge
-            curves) and communicate these values to the product under test. The
-            simulator needed to be adjustable so that testers could "inject"
-            specific battery values to see how the firefighting equipment
-            reacts.
+            My objective was to design and implement a Battery Simulator capable
+            of mimicking real-world battery states—such as voltage, temperature,
+            and discharge curves. The system needed to allow testers to "inject"
+            specific edge-case values via a control interface to validate how
+            the Device Under Test (DUT) reacts to critical battery failures.
           </div>
-          <span class="font-semibold text-[#7dd3fc]">Action</span>
-          <div>
-            Hardware Architecture: Developed a two-tier system using a Raspberry
-            Pi Pico (Microcontroller) for the real-time battery logic and a
-            Raspberry Pi 4 (Single Board Computer) as the controller. Protocol
-            Implementation: Engineered the communication bridge using the I2C
-            interface, allowing the product under test to "read" the simulated
-            battery data as if it were a real smart battery. Software
-            Development: Programmed the simulator to initialize with safe
-            default values. Created a control interface allowing users to
-            manually manipulate battery parameters for edge-case testing.
-            Integration: Developed a custom Software Plugin to integrate the
-            simulator directly into the company’s internal automated testing
-            framework.
-          </div>
+          <br />
+          <span class="font-semibold text-[#7dd3fc]">Action</span><br />
+          I developed a modular, two-tier hardware and software architecture:
+          <ul class="list-disc list-inside ml-4">
+            <li>
+              Hardware Architecture: Engineered a hybrid system using a
+              Raspberry Pi Pico for low-level, real-time battery logic (register
+              based) and a Raspberry Pi 4 as the high-level controller for data
+              manipulation.
+            </li>
+            <li>
+              Protocol Implementation: Developed a communication bridge via I2C,
+              enabling the DUT to interact with the simulator as if it were a
+              genuine "smart" battery.
+            </li>
+            <li>
+              Software & Integration: Programmed the simulator with safe
+              initialization defaults and a manual override interface for
+              edge-case testing. Also developed a custom software plugin to
+              integrate the simulator directly into the company’s internal
+              automated testing framework.
+            </li>
+            <li>
+              Technologies: Python, I2C, Raspberry Pi Pico (RP2040), Raspberry
+              Pi 4, HIL Testing.
+            </li>
+          </ul>
         </div>
         <div class="w-full md:col-span-1 md:row-span-1">
-          {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
+          {#if images_ptb_2.length > 0}
+            <Carousel images={images_ptb_2}>
               <Controls />
             </Carousel>
           {/if}
@@ -229,11 +286,11 @@ Result: Did it run 20% faster? Did you get an 'A'?
           <div>
             I successfully delivered a functional Battery Simulator and a
             corresponding test plugin. This system laid the foundation for all
-            future battery testing within the internal framework. It allowed the
-            development team to run automated, repeatable tests for firefighting
-            equipment, reducing the reliance on physical battery prototypes and
-            enabling the simulation of critical low-battery or error states
-            safely.
+            future battery testing within the internal framework. All components
+            were build modular so that the plugin could be reused for different
+            battery gauges. It allowed the development team to run automated,
+            repeatable tests for firefighting equipment, reducing the reliance
+            on physical battery prototypes.
           </div>
         </div>
       </div>
