@@ -5,10 +5,14 @@
     Carousel,
     Controls,
     CarouselIndicators,
+    Indicator,
+    Button,
   } from "flowbite-svelte";
   import {
     ChevronDoubleUpOutline,
     ChevronDoubleDownOutline,
+    CaretRightOutline,
+    CaretLeftOutline,
   } from "flowbite-svelte-icons";
   import ptb_1_io4 from "$lib/assets/project_images/ptb_1/io4.png";
   import ptb_1_cloud from "$lib/assets/project_images/ptb_1/cloudwatch.png";
@@ -170,8 +174,36 @@ Result: Did it run 20% faster? Did you get an 'A'?
               images={images_ptb_1}
               onchange={(detail) => (image = detail)}
             >
-              <Controls />
-              <CarouselIndicators />
+              <Controls>
+                {#snippet children(changeSlide)}
+                  <Button
+                    pill
+                    class="absolute start-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(true)}
+                  >
+                    <CaretLeftOutline />
+                  </Button>
+                  <Button
+                    pill
+                    class="absolute end-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(true)}
+                  >
+                    <CaretRightOutline />
+                  </Button>
+                {/snippet}
+              </Controls>
+              <CarouselIndicators>
+                {#snippet children({ selected, index })}
+                  <Indicator
+                    color={selected ? "blue" : "gray"}
+                    class="h-5 w-5 border border-white text-white {selected
+                      ? 'opacity-100'
+                      : 'opacity-90'}"
+                  >
+                    {index}
+                  </Indicator>
+                {/snippet}
+              </CarouselIndicators>
             </Carousel>
           {/if}
           <div
