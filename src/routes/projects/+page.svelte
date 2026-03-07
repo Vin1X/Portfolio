@@ -179,7 +179,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
                   <Button
                     pill
                     class="absolute start-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
-                    onclick={() => changeSlide(true)}
+                    onclick={() => changeSlide(false)}
                   >
                     <CaretLeftOutline />
                   </Button>
