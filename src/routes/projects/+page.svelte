@@ -27,6 +27,40 @@
   import ptb_2_construction2 from "$lib/assets/project_images/ptb_2/aufbau2_scaled.webp";
   import ptb_2_sequence from "$lib/assets/project_images/ptb_2/sequence_diagram_scaled.webp";
   import ptb_2_block2 from "$lib/assets/project_images/ptb_2/i2c_hitl_support_scaled.webp";
+
+  import ptb_3_rack_strom from "$lib/assets/project_images/ptb_3/rack_strom_scaled.webp";
+  import ptb_3_rack from "$lib/assets/project_images/ptb_3/rack_scaled.webp";
+  import ptb_3_raspi_mount from "$lib/assets/project_images/ptb_3/raspi_mount_scaled.webp";
+  import ptb_3_raspi_close from "$lib/assets/project_images/ptb_3/raspi_close_scaled.webp";
+  import ptb_3_aufbau from "$lib/assets/project_images/ptb_3/aufbau_scaled.webp";
+  import ptb_3_dhcp from "$lib/assets/project_images/ptb_3/dhcp_scaled.webp";
+
+  import stud_1_front from "$lib/assets/project_images/stud_1/robot_front.webp";
+  import stud_1_track from "$lib/assets/project_images/stud_1/track.webp";
+  import stud_1_back from "$lib/assets/project_images/stud_1/robot_back.webp";
+  import stud_1_build from "$lib/assets/project_images/stud_1/robot_build.webp";
+  import stud_1_drawing from "$lib/assets/project_images/stud_1/drawing.webp";
+  import stud_1_corner from "$lib/assets/project_images/stud_1/robot_cornering.webp";
+
+  import stud_2_data_assos_2 from "$lib/assets/project_images/stud_2/data_assos_2.webp";
+  import stud_2_data_assos_2_ransac from "$lib/assets/project_images/stud_2/data_assos_2_ransac.webp";
+  import stud_2_aufbau from "$lib/assets/project_images/stud_2/aufbau.webp";
+  import stud_2_lidar from "$lib/assets/project_images/stud_2/lidar.webp";
+  import stud_2_teststrecke_empty from "$lib/assets/project_images/stud_2/teststrecke_empty.webp";
+  import stud_2_teststrecke from "$lib/assets/project_images/stud_2/teststrecke.webp";
+  import stud_2_ransac_error from "$lib/assets/project_images/stud_2/ransac_error.webp";
+  import stud_2_3dprint from "$lib/assets/project_images/stud_2/3dprint.webp";
+  import stud_2_clustering_lidar from "$lib/assets/project_images/stud_2/clustering_lidar.webp";
+  import stud_2_slam_objects from "$lib/assets/project_images/stud_2/slam_objects.webp";
+
+  import ba_msa_hub from "$lib/assets/project_images/bachelor/msa_hub.webp";
+  import ba_functional_test from "$lib/assets/project_images/bachelor/functional_test.webp";
+  import ba_architektur from "$lib/assets/project_images/bachelor/architektur.webp";
+  import ba_architecture from "$lib/assets/project_images/bachelor/architecture.webp";
+  import ba_sequence_diagram from "$lib/assets/project_images/bachelor/sequence_diagram.webp";
+  import ba_app_draft_error from "$lib/assets/project_images/bachelor/app_draft_error.webp";
+  import ba_led from "$lib/assets/project_images/bachelor/led.webp";
+
   const images_ptb_1: { id: string; src: string; alt: string }[] = [
     {
       id: "0",
@@ -91,8 +125,166 @@
       alt: "Block diagram of the I2C HITL support.",
     },
   ];
+  const images_ptb_3: { id: string; src: string; alt: string }[] = [
+    {
+      id: "0",
+      src: ptb_3_rack_strom,
+      alt: "Back view of the testing rack.",
+    },
+    {
+      id: "1",
+      src: ptb_3_rack,
+      alt: "Front view of the testing rack with 64 Raspberry Pi's as devices under test (DUTs).",
+    },
+    {
+      id: "2",
+      src: ptb_3_raspi_mount,
+      alt: "Picture from a rack slot containing 4 Raspberry Pi's mounted with a custom 3D printed mount.",
+    },
+    {
+      id: "3",
+      src: ptb_3_raspi_close,
+      alt: "Close up picture of a Raspberry Pi with expansion board mounted in the rack.",
+    },
+    {
+      id: "4",
+      src: ptb_3_dhcp,
+      alt: "Diagram on how DHCP works.",
+    },
+    {
+      id: "5",
+      src: ptb_3_aufbau,
+      alt: "MSA environment of the M1.",
+    },
+  ];
+  const images_stud_1: { id: string; src: string; alt: string }[] = [
+    {
+      id: "0",
+      src: stud_1_front,
+      alt: "Picture of the robot from the front.",
+    },
+    {
+      id: "1",
+      src: stud_1_track,
+      alt: "Test track that was used for testing the robot.",
+    },
+    {
+      id: "2",
+      src: stud_1_back,
+      alt: "Frontal view of the robot. Displaying the RaspberryPi and the Sensors.",
+    },
+    {
+      id: "3",
+      src: stud_1_build,
+      alt: "Schematic drawing of the robot build for calculating the radiuses for the PID controller.",
+    },
+    {
+      id: "4",
+      src: stud_1_drawing,
+      alt: "Diagram of the loop of the control logic for the robot.",
+    },
+    {
+      id: "5",
+      src: stud_1_corner,
+      alt: "Example schematic of the robot approaching a sharp corner.",
+    },
+  ];
+  const images_stud_2: { id: string; src: string; alt: string }[] = [
+    {
+      id: "0",
+      src: stud_2_data_assos_2,
+      alt: "Picture of the robot from the top.",
+    },
+    {
+      id: "1",
+      src: stud_2_data_assos_2_ransac,
+      alt: "Diagram of the data association process with RANSAC for outlier rejection.",
+    },
+    {
+      id: "2",
+      src: stud_2_aufbau,
+      alt: "Close up picture of the robot with the controller and LIDAR.",
+    },
+    {
+      id: "3",
+      src: stud_2_lidar,
+      alt: "Picture of the LIDAR sensor.",
+    },
+    {
+      id: "4",
+      src: stud_2_teststrecke_empty,
+      alt: "Picture of the test track without any objects.",
+    },
+    {
+      id: "5",
+      src: stud_2_teststrecke,
+      alt: "Picture of the test track with objects and the robot.",
+    },
+    {
+      id: "6",
+      src: stud_2_ransac_error,
+      alt: "Example of the error of the RANSAC algorithm when there are too many outliers in the data.",
+    },
+    {
+      id: "7",
+      src: stud_2_3dprint,
+      alt: "Picture of the 3D printed mount.",
+    },
+    {
+      id: "8",
+      src: stud_2_clustering_lidar,
+      alt: "Example of the clustering of data points",
+    },
+    {
+      id: "9",
+      src: stud_2_slam_objects,
+      alt: "All objects that were used for programming the algorithm.",
+    },
+  ];
+  const images_ba: { id: string; src: string; alt: string }[] = [
+    {
+      id: "0",
+      src: ba_msa_hub,
+      alt: "Picture of MSA Hub.",
+    },
+    {
+      id: "1",
+      src: ba_functional_test,
+      alt: "Draft of the GUI of the functional test.",
+    },
+    {
+      id: "2",
+      src: ba_architektur,
+      alt: "Diagram of the system architecture.",
+    },
+    {
+      id: "3",
+      src: ba_architecture,
+      alt: "Diagram of the software architecture of the application.",
+    },
+    {
+      id: "4",
+      src: ba_sequence_diagram,
+      alt: "Sequence diagram of the application's workflow.",
+    },
+    {
+      id: "5",
+      src: ba_app_draft_error,
+      alt: "Draft of the GUI of the application showing an error message when validation fails.",
+    },
+    {
+      id: "6",
+      src: ba_led,
+      alt: "The MSA Hub with all LEDs active indicating a successful functional test.",
+    },
+  ];
 
   let image: HTMLImgAttributes | undefined = $state();
+  let image2: HTMLImgAttributes | undefined = $state();
+  let image3: HTMLImgAttributes | undefined = $state();
+  let image4: HTMLImgAttributes | undefined = $state();
+  let image5: HTMLImgAttributes | undefined = $state();
+  let image6: HTMLImgAttributes | undefined = $state();
 </script>
 
 <!--
@@ -103,21 +295,648 @@ Action: What code/tools did you use? (e.g., "Implemented a multi-threaded buffer
 Result: Did it run 20% faster? Did you get an 'A'?
 -->
 <div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
-  <h2 class="font-semibold text-center">
+  <h3 class="font-semibold text-center">
     These are my most interesting projects that I've worked on during either
     work or as a university project.<br />All of them were done for several
     weeks and also have a deep technical documentation aswell as a scientific
     report.
-  </h2>
+  </h3>
 </div>
 
+<!-- Bachelorthesis -->
 <div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
-    <span class="text-2xl font-semibold">Praxistransferbericht 1<br /></span>
+    <span class="text-xl font-semibold">Bachelorthesis<br /></span>
+
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
-          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
-          >Creation of software for data transfer to cloud servers</span
+          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          >Entwicklung eines Funktionstests für einen Industrie-Router in der
+          Produktion</span
+        >{/snippet}
+      {#snippet arrowup()}<ChevronDoubleUpOutline
+          class="h-6 w-6 text-[#f0f0f0]"
+        />{/snippet}
+      {#snippet arrowdown()}<ChevronDoubleDownOutline
+          class="h-6 w-6 text-[#f0f0f0]"
+        />{/snippet}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+        <div class="md:col-span-1 md:row-span-2">
+          <span class="font-semibold text-[#7dd3fc]">Situation</span>
+          <div>
+            With the in-house relocation of the "MSA Hub" production, a
+            specialized system was required to verify hardware integrity and
+            automate firmware deployment. The existing process was fragmented
+            and prone to manual errors, risking the high-quality standards of
+            safety-critical equipment. The goal was to align the production line
+            with Industry 4.0 standards through full digitalization and
+            networking.
+          </div>
+          <br />
+          <span class="font-semibold text-[#7dd3fc]">Task</span>
+          <div>
+            My objective was to conceive, implement, and evaluate a
+            comprehensive functional test system with a Graphical User Interface
+            (GUI). The system had to handle complex tasks—from low-level
+            debugging to label printing—while remaining simple enough for
+            factory personnel to operate with minimal training.
+          </div>
+          <br />
+          <span class="font-semibold text-[#7dd3fc]">Action</span><br />
+          I engineered a modular automation platform using professional communication
+          and debugging standards:
+          <ul class="list-disc list-inside ml-4">
+            <li>
+              Advanced Debugging & Flashing: Integrated JTAG and Serial Wire
+              Debug (SWD) interfaces to automate firmware programming for the
+              System On Module (SoM) and the internal Long Range Radio (LRR)
+              components.
+            </li>
+            <li>
+              Network Diagnostics: Utilized ICMP-based routines to verify
+              network connectivity and implemented DHCP management to ensure
+              reliable communication with the Device Under Test (DUT).
+            </li>
+            <li>
+              Software Orchestration: Developed a modular framework using Python
+              that utilized XML-RPC (or REST APIs) for inter-process
+              communication, ensuring a decoupled and maintainable architecture.
+            </li>
+            <li>
+              Configuration Management: Leveraged YAML for human-readable system
+              configurations, allowing for easy updates to test parameters
+              without changing the core codebase.
+            </li>
+            <li>
+              UX/UI Design: Created a "One-Button-App" to simplify the execution
+              of complex technical sequences into a single-action user
+              experience.
+            </li>
+            <li>
+              Technologies: Python (PyQt/PySide), JTAG, SWD, SoM (System On
+              Module), ICMP, DHCP, TCP/IP, XML-RPC, REST API, YAML, Linux, Shell
+              Scripting.
+            </li>
+          </ul>
+        </div>
+        <div class="w-full md:col-span-1 md:row-span-1">
+          {#if images_ba.length > 0}
+            <Carousel
+              images={images_ba}
+              onchange={(detail) => (image6 = detail)}
+            >
+              <Controls>
+                {#snippet children(changeSlide)}
+                  <Button
+                    pill
+                    class="absolute start-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(false)}
+                  >
+                    <CaretLeftOutline />
+                  </Button>
+                  <Button
+                    pill
+                    class="absolute end-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(true)}
+                  >
+                    <CaretRightOutline />
+                  </Button>
+                {/snippet}
+              </Controls>
+              <CarouselIndicators>
+                {#snippet children({ selected, index })}
+                  <Indicator
+                    color={selected ? "blue" : "gray"}
+                    class="h-5 w-5 border border-white text-white {selected
+                      ? 'opacity-100'
+                      : 'opacity-90'}"
+                  >
+                    {index}
+                  </Indicator>
+                {/snippet}
+              </CarouselIndicators>
+            </Carousel>
+          {/if}
+          <div
+            class="mt-2 rounded-sm bg-transparent p-2 text-center border-2 align-middle border-gray-300"
+          >
+            {image6?.alt}
+          </div>
+        </div>
+        <div class="md:col-span-1 md:row-span-1">
+          <span class="font-semibold text-[#7dd3fc]">Result</span>
+          <div>
+            The production-ready system successfully optimized the EOL phase,
+            ensuring every MSA Hub meets strict requirements before shipment. By
+            automating the quality gate and integrating hardware-level
+            verification, I significantly reduced Operational Expenditures
+            (OPEX) and eliminated manual errors in the production process.
+          </div>
+        </div>
+      </div>
+    </AccordionItem>
+  </Accordion>
+</div>
+
+<!-- Studienprojekt 2 -->
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+  <Accordion flush>
+    <span class="text-xl font-semibold">Studienprojekt 2<br /></span>
+
+    <AccordionItem class="text-white flex flex-col justify-between">
+      {#snippet header()}<span
+          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          >Simultaneous Localization and Mapping (SLAM) mit Fischertechnik -
+          Analyse und Optimierung der Vorgängerarbeit</span
+        >{/snippet}
+      {#snippet arrowup()}<ChevronDoubleUpOutline
+          class="h-6 w-6 text-[#f0f0f0]"
+        />{/snippet}
+      {#snippet arrowdown()}<ChevronDoubleDownOutline
+          class="h-6 w-6 text-[#f0f0f0]"
+        />{/snippet}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+        <div class="md:col-span-1 md:row-span-2">
+          <span class="font-semibold text-[#7dd3fc]">Situation</span>
+          <div>
+            A legacy study project demonstrated the feasibility of SLAM
+            (Simultaneous Localization and Mapping) using a Fischertechnik
+            robotics kit, but the implementation was prone to failure. The
+            system suffered from unstructured "spaghetti code" and unstable
+            sensor mounting, resulting in inconsistent environmental data and
+            poor mapping performance.
+          </div>
+          <br />
+          <span class="font-semibold text-[#7dd3fc]">Task</span>
+          <div>
+            My objective was to overhaul the system to professional engineering
+            standards. This involved a complete architectural refactor to
+            improve maintainability, as well as hardware modifications to ensure
+            reliable data acquisition for real-time autonomous navigation.
+          </div>
+          <br />
+          <span class="font-semibold text-[#7dd3fc]">Action</span><br />
+          I implemented modern software and hardware engineering practices to stabilize
+          the platform:
+          <ul class="list-disc list-inside ml-4">
+            <li>
+              Architectural Refactoring: Replaced procedural logic with a robust
+              Object-Oriented Programming (OOP) structure. I designed modular
+              classes to decouple sensor input, mapping logic, and motor
+              control, significantly reducing technical debt.
+            </li>
+            <li>
+              Hardware Integration: Designed and 3D-printed a custom mounting
+              bracket for the LiDAR sensor. This eliminated mechanical vibration
+              and ensured stable, precise data acquisition during robot
+              movement.
+            </li>
+            <li>
+              Performance Optimization: Streamlined the data processing pipeline
+              to allow for real-time mapping. I drafted technical strategies for
+              implementing RANSAC (Random Sample Consensus) to improve noise
+              reduction and data association.
+            </li>
+            <li>
+              Technologies: Python, OOP, LiDAR, SLAM Algorithms, 3D Printing
+              (CAD), Robotics.
+            </li>
+          </ul>
+        </div>
+        <div class="w-full md:col-span-1 md:row-span-1">
+          {#if images_stud_2.length > 0}
+            <Carousel
+              images={images_stud_2}
+              onchange={(detail) => (image5 = detail)}
+            >
+              <Controls>
+                {#snippet children(changeSlide)}
+                  <Button
+                    pill
+                    class="absolute start-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(false)}
+                  >
+                    <CaretLeftOutline />
+                  </Button>
+                  <Button
+                    pill
+                    class="absolute end-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(true)}
+                  >
+                    <CaretRightOutline />
+                  </Button>
+                {/snippet}
+              </Controls>
+              <CarouselIndicators>
+                {#snippet children({ selected, index })}
+                  <Indicator
+                    color={selected ? "blue" : "gray"}
+                    class="h-5 w-5 border border-white text-white {selected
+                      ? 'opacity-100'
+                      : 'opacity-90'}"
+                  >
+                    {index}
+                  </Indicator>
+                {/snippet}
+              </CarouselIndicators>
+            </Carousel>
+          {/if}
+          <div
+            class="mt-2 rounded-sm bg-transparent p-2 text-center border-2 align-middle border-gray-300"
+          >
+            {image5?.alt}
+          </div>
+        </div>
+        <div class="md:col-span-1 md:row-span-1">
+          <span class="font-semibold text-[#7dd3fc]">Result</span>
+          <div>
+            The project resulted in a high-quality, maintainable framework for
+            robotic mapping. The new OOP architecture improved system stability
+            and simplified the integration of future autonomous features. By
+            providing clean, consistent environmental data, the system now
+            serves as a reliable research platform for advanced autonomous
+            navigation.
+          </div>
+        </div>
+      </div>
+    </AccordionItem>
+  </Accordion>
+</div>
+
+<!-- Studienprojekt 1 -->
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+  <Accordion flush>
+    <span class="text-xl font-semibold">Studienprojekt 1<br /></span>
+
+    <AccordionItem class="text-white flex flex-col justify-between">
+      {#snippet header()}<span
+          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          >Unbekannten Wegen folgen - Entwicklung eines Roboter-Prototypen zur
+          Verfolgung von Linien mithilfe eines PID-Reglers</span
+        >{/snippet}
+      {#snippet arrowup()}<ChevronDoubleUpOutline
+          class="h-6 w-6 text-[#f0f0f0]"
+        />{/snippet}
+      {#snippet arrowdown()}<ChevronDoubleDownOutline
+          class="h-6 w-6 text-[#f0f0f0]"
+        />{/snippet}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+        <div class="md:col-span-1 md:row-span-2">
+          <span class="font-semibold text-[#7dd3fc]">Situation</span>
+          <div>
+            The goal of an university project was to develop a robotic system
+            capable of navigating unknown paths autonomously with a PID
+            controller. The paths were defined by high-contrast visual markers
+            (black lines on a white background). The challenge lay in control
+            logic to ensure the robot could follow curves and lines smoothly
+            without losing the track.
+          </div>
+          <br />
+          <span class="font-semibold text-[#7dd3fc]">Task</span>
+          <div>
+            I was in a group of 4 people and we were tasked with building a car
+            out of LEGO components that integrate control and sensor
+            functionality. The objective was to create a modular system that
+            could drive autonomously with minimal human intervention.
+          </div>
+          <br />
+          <span class="font-semibold text-[#7dd3fc]">Action</span>
+          <ul class="list-disc list-inside ml-4">
+            <li>
+              Prototyping: Constructed the physical robot chassis using LEGO
+              components, allowing for rapid iteration of sensor placement and
+              weight distribution.
+            </li>
+            <li>
+              Hardware Evaluation: Researched and tested different hardware
+              interfaces to motor/sensor actuation aswell as capabilities of the
+              LEGO ecosystem.
+            </li>
+            <li>
+              Control Implementation: Developed the logic to process real-time
+              sensor data and translate it into precise motor commands.
+            </li>
+            <li>
+              Testing: Ran comparative evaluations of different hardware setups
+              to determine which provided the highest reliability and lowest
+              latency during path tracking.
+            </li>
+            <li>
+              Technologies: LEGO-Spike, Python, Raspberry Pi & expansionboards
+            </li>
+          </ul>
+        </div>
+        <div class="w-full md:col-span-1 md:row-span-1">
+          {#if images_stud_1.length > 0}
+            <Carousel
+              images={images_stud_1}
+              onchange={(detail) => (image4 = detail)}
+            >
+              <Controls>
+                {#snippet children(changeSlide)}
+                  <Button
+                    pill
+                    class="absolute start-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(false)}
+                  >
+                    <CaretLeftOutline />
+                  </Button>
+                  <Button
+                    pill
+                    class="absolute end-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(true)}
+                  >
+                    <CaretRightOutline />
+                  </Button>
+                {/snippet}
+              </Controls>
+              <CarouselIndicators>
+                {#snippet children({ selected, index })}
+                  <Indicator
+                    color={selected ? "blue" : "gray"}
+                    class="h-5 w-5 border border-white text-white {selected
+                      ? 'opacity-100'
+                      : 'opacity-90'}"
+                  >
+                    {index}
+                  </Indicator>
+                {/snippet}
+              </CarouselIndicators>
+            </Carousel>
+          {/if}
+          <div
+            class="mt-2 rounded-sm bg-transparent p-2 text-center border-2 align-middle border-gray-300"
+          >
+            {image4?.alt}
+          </div>
+        </div>
+        <div class="md:col-span-1 md:row-span-1">
+          <span class="font-semibold text-[#7dd3fc]">Result</span>
+          <div>
+            We successfully developed a working prototype that follows unknown
+            paths. This project established a robust hardware and software
+            foundation, proving the feasibility of the chosen components. The
+            final design serves as a scalable platform for future developments
+            in advanced control theory, such as PID
+            (Proportional-Integral-Derivative) tuning.
+          </div>
+        </div>
+      </div>
+    </AccordionItem>
+  </Accordion>
+</div>
+
+<!-- PTB 3 -->
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+  <Accordion flush>
+    <span class="text-xl font-semibold">Praxistransferbericht 3<br /></span>
+
+    <AccordionItem class="text-white flex flex-col justify-between">
+      {#snippet header()}<span
+          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          >Einrichtung eines HITL-Testsystems mit RaspberryPi’s</span
+        >{/snippet}
+      {#snippet arrowup()}<ChevronDoubleUpOutline
+          class="h-6 w-6 text-[#f0f0f0]"
+        />{/snippet}
+      {#snippet arrowdown()}<ChevronDoubleDownOutline
+          class="h-6 w-6 text-[#f0f0f0]"
+        />{/snippet}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+        <div class="md:col-span-1 md:row-span-2">
+          <span class="font-semibold text-[#7dd3fc]">Situation</span>
+          <div>
+            To validate critical firefighting communication devices, the team
+            required large-scale Hardware-in-the-Loop (HITL) testing to simulate
+            real world scenarios. The primary challenge was maintaining a
+            stable, reproducible environment while controlling and updating 64
+            individual Devices Under Test (DUT) simultaneously.
+          </div>
+          <br />
+          <span class="font-semibold text-[#7dd3fc]">Task</span>
+          <div>
+            My objective was to design, build, and automate a hardware testing
+            rack featuring 64 Raspberry Pi 4 nodes. I needed to establish a
+            reliable communication channel between a central Linux controller
+            and the cluster, automate test execution, and implement a rapid
+            recovery protocol for system-wide failures.
+          </div>
+          <br />
+          <span class="font-semibold text-[#7dd3fc]">Action</span>
+          <ul class="list-disc list-inside ml-4">
+            <li>
+              Network Infrastructure: Configured a dedicated local network
+              utilizing SSH for remote orchestration and DHCP for efficient IP
+              management across the 64-node cluster.
+            </li>
+            <li>
+              Automation & Orchestration: Leveraged Ansible to automate software
+              deployments and test synchronization, ensuring 100% configuration
+              consistency across all units.
+            </li>
+            <li>
+              System Imaging & Recovery: Developed a custom Linux Image for the
+              Raspberry Pis. This enabled a bare metal recovery, allowing any
+              failing node to be reflashed to a stable state within minutes.
+            </li>
+            <li>
+              Technologies: Ansible, Linux (Debian/Raspbian), SSH, DHCP, Shell
+              Scripting, Raspberry Pi 4.
+            </li>
+          </ul>
+        </div>
+        <div class="w-full md:col-span-1 md:row-span-1">
+          {#if images_ptb_3.length > 0}
+            <Carousel
+              images={images_ptb_3}
+              onchange={(detail) => (image3 = detail)}
+            >
+              <Controls>
+                {#snippet children(changeSlide)}
+                  <Button
+                    pill
+                    class="absolute start-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(false)}
+                  >
+                    <CaretLeftOutline />
+                  </Button>
+                  <Button
+                    pill
+                    class="absolute end-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(true)}
+                  >
+                    <CaretRightOutline />
+                  </Button>
+                {/snippet}
+              </Controls>
+              <CarouselIndicators>
+                {#snippet children({ selected, index })}
+                  <Indicator
+                    color={selected ? "blue" : "gray"}
+                    class="h-5 w-5 border border-white text-white {selected
+                      ? 'opacity-100'
+                      : 'opacity-90'}"
+                  >
+                    {index}
+                  </Indicator>
+                {/snippet}
+              </CarouselIndicators>
+            </Carousel>
+          {/if}
+          <div
+            class="mt-2 rounded-sm bg-transparent p-2 text-center border-2 align-middle border-gray-300"
+          >
+            {image3?.alt}
+          </div>
+        </div>
+        <div class="md:col-span-1 md:row-span-1">
+          <span class="font-semibold text-[#7dd3fc]">Result</span>
+          <div>
+            The automated rack significantly increased testing capacity and
+            eliminated manual configuration errors. By introducing
+            Ansible-driven orchestration and custom imaging, I reduced system
+            recovery time from hours to minutes. This infrastructure provided a
+            high-availability platform for validating the reliability of
+            safety-critical hardware at scale.
+          </div>
+        </div>
+      </div>
+    </AccordionItem>
+  </Accordion>
+</div>
+
+<!-- PTB 2 -->
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+  <Accordion flush>
+    <span class="text-xl font-semibold">Praxistransferbericht 2<br /></span>
+    <AccordionItem class="text-white flex flex-col justify-between">
+      {#snippet header()}<span
+          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          >Design und Implementierung eines Batteriesimulators</span
+        >{/snippet}
+      {#snippet arrowup()}<ChevronDoubleUpOutline
+          class="h-6 w-6 text-[#f0f0f0]"
+        />{/snippet}
+      {#snippet arrowdown()}<ChevronDoubleDownOutline
+          class="h-6 w-6 text-[#f0f0f0]"
+        />{/snippet}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+        <div class="md:col-span-1 md:row-span-2">
+          <span class="font-semibold text-[#7dd3fc]">Situation</span>
+          <div>
+            Testing firefighting equipment with physical batteries is slow,
+            expensive, and difficult to replicate under specific failure
+            conditions. To integrate battery testing into MSA’s
+            Hardware-in-the-Loop (HITL), a solution was needed to simulate
+            consistent and manipulatable battery behavior without physical
+            hardware.
+          </div>
+          <br />
+          <span class="font-semibold text-[#7dd3fc]">Task</span>
+          <div>
+            My objective was to design and implement a Battery Simulator capable
+            of mimicking real-world battery states—such as voltage, temperature,
+            and discharge curves. The system needed to allow testers to "inject"
+            specific edge-case values via a control interface to validate how
+            the Device Under Test (DUT) reacts to critical battery failures.
+          </div>
+          <br />
+          <span class="font-semibold text-[#7dd3fc]">Action</span><br />
+          I developed a modular, two-tier hardware and software architecture:
+          <ul class="list-disc list-inside ml-4">
+            <li>
+              Hardware Architecture: Engineered a hybrid system using a
+              Raspberry Pi Pico for low-level, real-time battery logic (register
+              based) and a Raspberry Pi 4 as the high-level controller for data
+              manipulation.
+            </li>
+            <li>
+              Protocol Implementation: Developed a communication bridge via I2C,
+              enabling the DUT to interact with the simulator as if it were a
+              genuine "smart" battery.
+            </li>
+            <li>
+              Software & Integration: Programmed the simulator with safe
+              initialization defaults and a manual override interface for
+              edge-case testing. Also developed a custom software plugin to
+              integrate the simulator directly into the company’s internal
+              automated testing framework.
+            </li>
+            <li>
+              Technologies: Python, I2C, Raspberry Pi Pico (RP2040), Raspberry
+              Pi 4, HIL Testing.
+            </li>
+          </ul>
+        </div>
+        <div class="w-full md:col-span-1 md:row-span-1">
+          {#if images_ptb_2.length > 0}
+            <Carousel
+              images={images_ptb_2}
+              onchange={(detail) => (image2 = detail)}
+            >
+              <Controls>
+                {#snippet children(changeSlide)}
+                  <Button
+                    pill
+                    class="absolute start-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(false)}
+                  >
+                    <CaretLeftOutline />
+                  </Button>
+                  <Button
+                    pill
+                    class="absolute end-4 top-1/2 -translate-y-1/2 p-2 font-bold bg-[#7dd3fc]"
+                    onclick={() => changeSlide(true)}
+                  >
+                    <CaretRightOutline />
+                  </Button>
+                {/snippet}
+              </Controls>
+              <CarouselIndicators>
+                {#snippet children({ selected, index })}
+                  <Indicator
+                    color={selected ? "blue" : "gray"}
+                    class="h-5 w-5 border border-white text-white {selected
+                      ? 'opacity-100'
+                      : 'opacity-90'}"
+                  >
+                    {index}
+                  </Indicator>
+                {/snippet}
+              </CarouselIndicators>
+            </Carousel>
+          {/if}
+          <div
+            class="mt-2 rounded-sm bg-transparent p-2 text-center border-2 align-middle border-gray-300"
+          >
+            {image2?.alt}
+          </div>
+        </div>
+        <div class="md:col-span-1 md:row-span-1">
+          <span class="font-semibold text-[#7dd3fc]">Result</span>
+          <div>
+            I successfully delivered a functional Battery Simulator and a
+            corresponding test plugin. This system laid the foundation for all
+            future battery testing within the internal framework. All components
+            were build modular so that the plugin could be reused for different
+            battery gauges. It allowed the development team to run automated,
+            repeatable tests for firefighting equipment, reducing the reliance
+            on physical battery prototypes.
+          </div>
+        </div>
+      </div>
+    </AccordionItem>
+  </Accordion>
+</div>
+
+<!-- PTB 1 -->
+<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+  <Accordion flush>
+    <span class="text-xl font-semibold">Praxistransferbericht 1<br /></span>
+    <AccordionItem class="text-white flex flex-col justify-between">
+      {#snippet header()}<span
+          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          >Erstellung einer Software zur Datenübertragung an Cloud-Server</span
         >{/snippet}
       {#snippet arrowup()}<ChevronDoubleUpOutline
           class="h-6 w-6 text-[#f0f0f0]"
@@ -222,509 +1041,6 @@ Result: Did it run 20% faster? Did you get an 'A'?
             providing immediate, global visibility into granular device
             behavior.
           </p>
-        </div>
-      </div>
-    </AccordionItem>
-  </Accordion>
-</div>
-<!--
-  Das ist Ziel dieser Arbeit ist es, eine Anwendung für die Entwickler zu konstruieren, welche
-    Log Daten aus dem Embedded Device nimmt, die durch eine seriele Schnittstelle am
-    Computer verbunden ist und diese in die Cloud sendet.
-    Diese Methode bietet den Vorteil, die Log Daten direkt in die Cloud zu schicken und
-    zu vergleichen. Dadurch kann man bei entstandenen Fehlern eine leichte Rückführung machen,
-    da die direkte Ausgabe viel mehr Informationen über die Zeit, die Art der Nachricht
-    und dem Inhalt dieser Nachricht gibt und meistens diese Informationen nicht in der Cloud
-    einsehbar sind. Geräte, sofern sie eine Cloud Verbindung haben, senden meist nur runtergebrochene
-    Informationen, um kosten für die Cloud Dienste zu sparen. Somit muss
-    bei Geräten ohne Cloud Verbindung eine manuelle Überprüfung durchgeführt werden, um
-    mehr Einsicht über einen Fehler zu haben.
-    Hierfür wird zunächst auf das lesen von Daten über ein Debug Board eingegangen. Danach
-    auf das grundlegende Konzept der Cloudsicherung: Das senden der rohen Log Daten, das
-    filtern dieser Daten und schließlich das auswerten in der Cloud.
-  -->
-
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
-  <Accordion flush>
-    <span class="text-2xl font-semibold">Praxistransferbericht 2<br /></span>
-    <AccordionItem class="text-white flex flex-col justify-between">
-      {#snippet header()}<span
-          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
-          >Design und Implementierung eines Batteriesimulators</span
-        >{/snippet}
-      {#snippet arrowup()}<ChevronDoubleUpOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      {#snippet arrowdown()}<ChevronDoubleDownOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
-        <div class="md:col-span-1 md:row-span-2">
-          <span class="font-semibold text-[#7dd3fc]">Situation</span>
-          <div>
-            Testing firefighting equipment with physical batteries is slow,
-            expensive, and difficult to replicate under specific failure
-            conditions. To integrate battery testing into MSA’s
-            Hardware-in-the-Loop (HITL), a solution was needed to simulate
-            consistent and manipulatable battery behavior without physical
-            hardware.
-          </div>
-          <br />
-          <span class="font-semibold text-[#7dd3fc]">Task</span>
-          <div>
-            My objective was to design and implement a Battery Simulator capable
-            of mimicking real-world battery states—such as voltage, temperature,
-            and discharge curves. The system needed to allow testers to "inject"
-            specific edge-case values via a control interface to validate how
-            the Device Under Test (DUT) reacts to critical battery failures.
-          </div>
-          <br />
-          <span class="font-semibold text-[#7dd3fc]">Action</span><br />
-          I developed a modular, two-tier hardware and software architecture:
-          <ul class="list-disc list-inside ml-4">
-            <li>
-              Hardware Architecture: Engineered a hybrid system using a
-              Raspberry Pi Pico for low-level, real-time battery logic (register
-              based) and a Raspberry Pi 4 as the high-level controller for data
-              manipulation.
-            </li>
-            <li>
-              Protocol Implementation: Developed a communication bridge via I2C,
-              enabling the DUT to interact with the simulator as if it were a
-              genuine "smart" battery.
-            </li>
-            <li>
-              Software & Integration: Programmed the simulator with safe
-              initialization defaults and a manual override interface for
-              edge-case testing. Also developed a custom software plugin to
-              integrate the simulator directly into the company’s internal
-              automated testing framework.
-            </li>
-            <li>
-              Technologies: Python, I2C, Raspberry Pi Pico (RP2040), Raspberry
-              Pi 4, HIL Testing.
-            </li>
-          </ul>
-        </div>
-        <div class="w-full md:col-span-1 md:row-span-1">
-          {#if images_ptb_2.length > 0}
-            <Carousel images={images_ptb_2}>
-              <Controls />
-            </Carousel>
-          {/if}
-        </div>
-        <div class="md:col-span-1 md:row-span-1">
-          <span class="font-semibold text-[#7dd3fc]">Result</span>
-          <div>
-            I successfully delivered a functional Battery Simulator and a
-            corresponding test plugin. This system laid the foundation for all
-            future battery testing within the internal framework. All components
-            were build modular so that the plugin could be reused for different
-            battery gauges. It allowed the development team to run automated,
-            repeatable tests for firefighting equipment, reducing the reliance
-            on physical battery prototypes.
-          </div>
-        </div>
-      </div>
-    </AccordionItem>
-  </Accordion>
-</div>
-
-<!--
-  Im Unternehmen „MSA Technologies und Enterprise Services GmbH“ wird zur Zeit ein
-    neues Produkt entwickelt, welches für den Feuerwehrsektor eingesetzt wird. Hierfür soll
-    ein Batteriesimulator erstellt werden, welcher das Verhalten der Batterie für dieses Produkt
-    simulieren soll. Das Batterieverhalten wird mit einem Mikrocontroller (Raspberry Pi
-    Pico) simuliert und kommuniziert mithilfe eines Einplatinencomputer (Raspberry Pi 4)
-    und einer I2C-Schnittstelle mit dem zu testenden Produkt.
-    Der Batteriesimulator initialisiert mit Standardwerten und diese Standardwerte sind manipulierbar.
-    Der Batteriesimulator wird für das Testen in dem firmeninternen Testsystem
-    verwendet. Hierfür wird die Grundlage für das Batterietesten gelegt und wie es später in
-    dem firmeninternen Testsystem verwendet wird. Auch wird das Konzept für die Kommunikation
-    über die I2C-Schnittstelle des zu testenden Produkts erklärt. Die Implementierung
-    des Batteriesimulators, sowie die Erstellung eines Plugins1 für das Batterieverhalten im
-    firmeninternen Testsystems werden zusammen mit dem Simulatordesign erläutert.
-  -->
-
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
-  <Accordion flush>
-    <span class="text-2xl font-semibold">Praxistransferbericht 3<br /></span>
-
-    <AccordionItem class="text-white flex flex-col justify-between">
-      {#snippet header()}<span
-          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
-          >Einrichtung eines HITL-Testsystems mit RaspberryPi’s</span
-        >{/snippet}
-      {#snippet arrowup()}<ChevronDoubleUpOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      {#snippet arrowdown()}<ChevronDoubleDownOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
-        <div class="md:col-span-1 md:row-span-2">
-          <span class="font-semibold text-[#7dd3fc]">Situation</span>
-          <div>
-            To validate firefighting communication devices, the team needed a
-            way to run large-scale Hardware-in-the-Loop (HIL) tests. Testing
-            these devices manually was impossible due to the scale required to
-            simulate a real-world emergency scenario. The challenge was to
-            create a stable, reproducible environment where 64 "Devices Under
-            Test" (DUTs) could be controlled and updated simultaneously.
-          </div>
-          <span class="font-semibold text-[#7dd3fc]">Task</span>
-          <div>
-            My objective was to build and automate a testing rack consisting of
-            64 Raspberry Pi 4 nodes, each acting as a simulated firefighting
-            device. I needed to ensure that the central Linux controller could
-            communicate with every node, execute tests, and recover the entire
-            system quickly in case of a software failure.
-          </div>
-          <span class="font-semibold text-[#7dd3fc]">Action</span>
-          <div>
-            Network Infrastructure: Configured the network communication using
-            SSH for remote command execution and DHCP for dynamic IP management
-            across the 64-node cluster. Automation & Orchestration: Utilized
-            Ansible to automate software deployments and test execution,
-            ensuring configuration consistency across all 64 units. System
-            Imaging: Developed a custom Linux Gold Image (Speicherabbild) for
-            the Raspberry Pis. This allowed for rapid "bare-metal" recovery,
-            ensuring that any failing node could be reflashed to a known working
-            state within minutes. Documentation: Authored comprehensive
-            technical documentation for the Linux control environment to ensure
-            long-term maintainability by the engineering team.
-          </div>
-        </div>
-        <div class="w-full md:col-span-1 md:row-span-1">
-          {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
-              <Controls />
-            </Carousel>
-          {/if}
-        </div>
-        <div class="md:col-span-1 md:row-span-1">
-          <span class="font-semibold text-[#7dd3fc]">Result</span>
-          <div>
-            I successfully implemented a fully automated HIL test rack that
-            significantly increased testing throughput. By moving from manual
-            checks to an Ansible-driven SSH orchestration, the team could
-            simulate complex network behaviors across 64 devices at once. The
-            inclusion of the custom system image reduced downtime from hours to
-            minutes, creating a "production-ready" test environment for
-            safety-critical firefighting hardware.
-          </div>
-        </div>
-      </div>
-    </AccordionItem>
-  </Accordion>
-</div>
-<!--
-  Im Unternehmen „MSA Technologies und Enterprise Services GmbH“ wurde ein automatisiertes
-    HITL-Testsystem erstellt. Das Testsystem besteht aus 64 Einplatinencomputern
-    (Raspberry Pi 4) und einem Linux-Computer. Die Raspberry Pi’s sind mit einem Funkmodul
-    ausgestattet und sind das DUT. Das System simuliert einen Teil eines Geräts für
-    Feuerwehrleute. Die Tests werden mit Hilfe eines Linux-Computers ausgeführt, welcher
-    über das Netzwerkprotokoll SSH mit den Raspberry Pi’s kommuniziert.
-    Es wurde zudem ein Speicherabbild für die Raspberry Pi’s und eine detaillierte Dokumentation
-    für den Linux-Computer erstellt. Im Falle eines Ausfalls, ist eine schnelle Wiederherstellung
-    möglich. Im Folgenden wird die Grundlage von Hardware In The Loop und den
-    Netzwerkprotokollen SSH, als auch DHCP, sowie dem Automatisierungswerkzeug Ansible
-    gelegt.
-    Anschließend gibt es eine Anforderungsanalyse über die verwendete Hard- sowie Software
-    und der Kommunikation über das Netzwerkprotokoll SSH.
-    Die Implementierung, einschließlich des Aufbaus des Testgestells und der Erstellung des
-    Speicherabbilds sowie des Linux-Computers, wird detailliert beschrieben.
-  -->
-
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
-  <Accordion flush>
-    <span class="text-2xl font-semibold">Studienprojekt 1<br /></span>
-
-    <AccordionItem class="text-white flex flex-col justify-between">
-      {#snippet header()}<span
-          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
-          >Unbekannten Wegen folgen - Entwicklung eines Roboter-Prototypen zur
-          Verfolgung von Linien mithilfe eines PID-Reglers</span
-        >{/snippet}
-      {#snippet arrowup()}<ChevronDoubleUpOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      {#snippet arrowdown()}<ChevronDoubleDownOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
-        <div class="md:col-span-1 md:row-span-2">
-          <span class="font-semibold text-[#7dd3fc]">Situation</span>
-          <div>
-            The goal was to develop a robotic system capable of navigating
-            unknown paths autonomously. The paths were defined by high-contrast
-            visual markers (black lines on a white background). The challenge
-            lay in selecting the right hardware components and control logic to
-            ensure the robot could follow complex curves smoothly without losing
-            the track.
-          </div>
-          <span class="font-semibold text-[#7dd3fc]">Task</span>
-          <div>
-            I was tasked with evaluating various hardware approaches for motor
-            control and sensor integration, and subsequently building a
-            functional prototype. The objective was to create a modular system
-            that could serve as a reliable baseline for future algorithmic
-            optimizations.
-          </div>
-          <span class="font-semibold text-[#7dd3fc]">Action</span>
-          <div>
-            Prototyping: Constructed the physical robot chassis using LEGO
-            components, allowing for rapid iteration of sensor placement and
-            weight distribution. Hardware Evaluation: Researched and tested
-            different hardware interfaces to bridge the gap between high-level
-            logic and motor/sensor actuation. Control Implementation: Developed
-            the logic to process real-time sensor data and translate it into
-            precise motor commands. Testing: Ran comparative evaluations of
-            different hardware setups to determine which provided the highest
-            reliability and lowest latency during path tracking.
-          </div>
-        </div>
-        <div class="w-full md:col-span-1 md:row-span-1">
-          {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
-              <Controls />
-            </Carousel>
-          {/if}
-        </div>
-        <div class="md:col-span-1 md:row-span-1">
-          <span class="font-semibold text-[#7dd3fc]">Result</span>
-          <div>
-            I successfully developed a working prototype that accurately follows
-            unknown paths. This project established a robust hardware and
-            software foundation, proving the feasibility of the chosen
-            components. The final design serves as a scalable platform for
-            future developments in advanced control theory, such as PID
-            (Proportional-Integral-Derivative) tuning.
-          </div>
-        </div>
-      </div>
-    </AccordionItem>
-  </Accordion>
-</div>
-<!--
-  Diese Arbeit beschäftigt sich mit dem Bau und der Implementierung eines Roboters
-    zur Verfolgung unbekannter Wege. Diese Wege sind durch eine schwarze Linie
-    auf weißem Grund definiert. Für den Aufbau werden überwiegend LEGO-Bausteine
-    verwendet.
-    Das Ziel dieser Arbeit ist die Evaluation verschiedener Ansätze mit unterschiedlichen
-    Hardwarekomponenten zur Ansteuerung der Motoren und Sensoren sowie die
-    Implementierung eines Prototyps.
-    Ein funktionierender Prototyp konnte erfolgreich entwickelt werden, wodurch eine
-    grundlegende Basis geschaffen wurde, die in Zukunft für weitere Optimierungen genutzt
-    werden kann.
-  -->
-
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
-  <Accordion flush>
-    <span class="text-2xl font-semibold">Studienprojekt 2<br /></span>
-
-    <AccordionItem class="text-white flex flex-col justify-between">
-      {#snippet header()}<span
-          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
-          >Simultaneous Localization and Mapping (SLAM) mit Fischertechnik -
-          Analyse und Optimierung der Vorgängerarbeit</span
-        >{/snippet}
-      {#snippet arrowup()}<ChevronDoubleUpOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      {#snippet arrowdown()}<ChevronDoubleDownOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
-        <div class="md:col-span-1 md:row-span-2">
-          <span class="font-semibold text-[#7dd3fc]">Situation</span>
-          <div>
-            A previous study project had demonstrated the feasibility of SLAM
-            (Simultaneous Localization and Mapping) using a Fischertechnik
-            robotics kit, but the implementation was difficult to maintain. The
-            code lacked structure, and the hardware lacked a stable mounting
-            solution for the LiDAR sensor, leading to inconsistent data and poor
-            system performance.
-          </div>
-          <span class="font-semibold text-[#7dd3fc]">Task</span>
-          <div>
-            My objective was to transform this prototype into a
-            professional-grade system. This involved two main tracks: Software:
-            Improving code quality, stability, and performance through modern
-            engineering practices. Hardware: Integrating a LiDAR sensor
-            physically and logically into the robot's ecosystem.
-          </div>
-          <span class="font-semibold text-[#7dd3fc]">Action</span>
-          <div>
-            Architectural Refactoring: Extracted existing procedural logic and
-            restructured the entire codebase using Object-Oriented Programming
-            (OOP). I designed modular classes to handle sensor input, mapping
-            logic, and motor control independently. Hardware Integration:
-            Designed and 3D-printed a custom mounting bracket to secure the
-            LiDAR sensor, ensuring stable data acquisition during movement.
-            Performance Optimization: Analyzed and optimized the data processing
-            pipeline to ensure the robot could map its environment in real-time
-            with higher stability. Future-Proofing: Drafted technical strategies
-            for implementing advanced algorithms like RANSAC (Random Sample
-            Consensus) for noise reduction and improved data association.
-          </div>
-        </div>
-        <div class="w-full md:col-span-1 md:row-span-1">
-          {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
-              <Controls />
-            </Carousel>
-          {/if}
-        </div>
-        <div class="md:col-span-1 md:row-span-1">
-          <span class="font-semibold text-[#7dd3fc]">Result</span>
-          <div>
-            I successfully delivered a high-quality, maintainable software
-            framework for robotic mapping. The new OOP architecture
-            significantly improved system stability and simplified future
-            feature integration. The physical LiDAR integration provided clean,
-            consistent environmental data, establishing a reliable platform for
-            advanced autonomous navigation research.
-          </div>
-        </div>
-      </div>
-    </AccordionItem>
-  </Accordion>
-</div>
-
-<!--
-  Das Ziel dieser Arbeit ist die Analyse und Optimierung des vorangegangenen Studienprojekts
-    „Simultaneous Localization and Mapping (SLAM) mit Fischertechnik -
-    Analyse und praktische Umsetzung“, das die Umsetzbarkeit von Simultaneous Localization
-    and Mapping (SLAM) unter Verwendung des Fischertechnik STEM Coding
-    Competition Sets untersucht.
-    Der Fokus liegt auf der Verknüpfung des Roboters mit dem LiDAR Sensor und
-    der Verbesserung der Qualität und Wartbarkeit des bestehenden Quellcodes. Dafür
-    wurden die bisherigen Funktionalitäten des Quellcodes extrahiert und nach dem
-    objektorientierten Ansatz in Klassen umstrukturiert, um eine bessere Wartbarkeit,
-    Stabilität und Performanz zu gewährleisten. Außerdem wird die Erstellung einer 3D
-    gedruckten Halterung thematisiert und dessen Notwendigkeit evaluiert.
-    Die Anforderungen konnten weitestgehend umgesetzt werden. Der Quellcode befindet
-    sich in einem qualitativ hochwertigen Zustand und der LiDAR-Sensor kann auf
-    dem Roboter befestigt werden. Es werden auch mögliche weitere Verbesserungen
-    hinsichtlich RANSAC, LiDAR und Datenassoziation diskutiert, um die Funktionalität
-    und Effizienz des Systems weiter zu steigern.
-  -->
-
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
-  <Accordion flush>
-    <span class="text-2xl font-semibold">Bachelorthesis<br /></span>
-
-    <AccordionItem class="text-white flex flex-col justify-between">
-      {#snippet header()}<span
-          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
-          >Entwicklung eines Funktionstests für einenIndustrie-Router in der
-          Produktion</span
-        >{/snippet}
-      {#snippet arrowup()}<ChevronDoubleUpOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      {#snippet arrowdown()}<ChevronDoubleDownOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
-        <div class="md:col-span-1 md:row-span-2">
-          <span class="font-semibold text-[#7dd3fc]">Situation</span>
-          <div>
-            As production of the "MSA Hub" was relocated in-house, a new system
-            was required to verify the hardware before it left the factory. The
-            existing process was fragmented and prone to manual errors. To
-            ensure high-quality standards for safety equipment, MSA needed a
-            centralized, automated system to handle everything from firmware
-            flashing to physical label printing.
-          </div>
-          <span class="font-semibold text-[#7dd3fc]">Task</span>
-          <div>
-            My objective was to conceive, implement, and evaluate a
-            comprehensive functional test system with a graphical user interface
-            (GUI). The system had to be robust enough for a production
-            environment and simple enough to be operated by factory personnel
-            with minimal training.
-          </div>
-          <span class="font-semibold text-[#7dd3fc]">Action</span>
-          <div>
-            Software Architecture: Developed a modular software framework to
-            handle diverse tasks like label scanning, firmware programming (for
-            both the LRR module and the Hub), and interface testing. UX/UI
-            Design: Implemented a "One-Button-App" concept. This simplified
-            complex technical sequences into a single-action user experience,
-            significantly reducing the potential for human error on the assembly
-            line. System Integration: Engineered the logic to automatically
-            generate and print device-specific labels only after a successful
-            functional test, ensuring no faulty device could be shipped.
-            Automation: Integrated automated flashing routines for the internal
-            Long Range Radio (LRR) modules and Hub firmware to streamline the
-            deployment process.
-          </div>
-        </div>
-        <div class="w-full md:col-span-1 md:row-span-1">
-          {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
-              <Controls />
-            </Carousel>
-          {/if}
-        </div>
-        <div class="md:col-span-1 md:row-span-1">
-          <span class="font-semibold text-[#7dd3fc]">Result</span>
-          <div>
-            I successfully delivered a production-ready test system that
-            optimized the End-of-Line (EOL) testing phase. The modular design
-            ensures the system is easily maintainable and scalable. By
-            automating the quality assurance process, the system minimized
-            manual errors and ensured that every MSA Hub leaving the factory
-            meets strict functional and firmware requirements.
-          </div>
-        </div>
-      </div>
-    </AccordionItem>
-  </Accordion>
-</div>
-
-<!--
-  Im Zuge einer Produktionsverlagerung vom Lieferanten zu MSA wurde ein neues Funktionstestsystem
-    für den MSA Hub konzipiert und entwickelt. Die vorliegende Arbeit beschreibt die
-    Konzeption, Implementierung und Evaluation des Funktionstestsystems mit grafischer Oberfläche.
-    Das entwickelte System ist in der Lage, vorhandene Labels am Gerät auszulesen, das interne LRRModul
-    und die Hub-Firmware zu programmieren, einen Funktionstest aller relevanten Schnittstellen
-    durchzuführen sowie die benötigten Gerätelabels zu generieren und zu drucken. Ziel war es, eine
-    zuverlässige und effiziente Lösung zu schaffen, die den EOL-Test optimiert und manuelle Fehlerquellen
-    minimiert.
-    Die Umsetzung erfolgte in Form eines modularen Software-Frameworks. Ein intuitives „One-Button-
-    App“-Konzept führt das Produktionspersonal mit minimalem Einarbeitungsaufwand durch den
-    Prüfprozess. Die Implementierung aller Kernfunktionalitäten sorgt für ein robustes und wartbares
-    Testsystem, das die Qualitätssicherung des MSA Hubs sicherstellt.
-  -->
-
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
-  <Accordion flush>
-    <span class="text-2xl font-semibold">University project<br /></span>
-
-    <AccordionItem class="text-white flex flex-col justify-between">
-      {#snippet header()}<span
-          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
-          >Erdulator</span
-        >{/snippet}
-      {#snippet arrowup()}<ChevronDoubleUpOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      {#snippet arrowdown()}<ChevronDoubleDownOutline
-          class="h-6 w-6 text-[#f0f0f0]"
-        />{/snippet}
-      <div
-        class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-start mt-6"
-      >
-        <div>a</div>
-        <div class="w-full">
-          {#if images_ptb_1.length > 0}
-            <Carousel images={images_ptb_1}>
-              <Controls />
-            </Carousel>
-          {/if}
         </div>
       </div>
     </AccordionItem>

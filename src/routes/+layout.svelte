@@ -114,7 +114,7 @@
 <!-- Scale Head<->Content<->Foot correctly -->
 <div class="min-h-screen flex flex-col">
 	<header
-		class="flex justify-start items-center w-full p-4 bg-gray-800/80 text-white text-4xl font-semibold border-b border-gray-700 gap-8 h-20"
+		class="flex justify-start items-center w-full p-4 bg-gray-800/80 text-white text-3xl font-semibold border-b border-gray-700 gap-8 h-16"
 	>
 		<a
 			class="block hover:scale-110 transition-transform duration-300"
