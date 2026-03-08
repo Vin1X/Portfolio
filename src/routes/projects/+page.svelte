@@ -22,11 +22,11 @@
   import ptb_1_uart from "$lib/assets/project_images/ptb_1/uart_scaled.webp";
   import ptb_1_draft from "$lib/assets/project_images/ptb_1/entwurf_scaled.webp";
 
-  import ptb_2_construction from "$lib/assets/project_images/ptb_2/ahud_aufbau_2.jpg";
-  import ptb_2_block from "$lib/assets/project_images/ptb_2/blockschalt.drawio.png";
-  import ptb_2_construction2 from "$lib/assets/project_images/ptb_2/ahud_aufbau_3.1.png";
-  import ptb_2_sequence from "$lib/assets/project_images/ptb_2/Sequence Fuel Gauge Simulator.drawio.png";
-  import ptb_2_block2 from "$lib/assets/project_images/ptb_2/i2c_hitl_support.drawio.png";
+  import ptb_2_construction from "$lib/assets/project_images/ptb_2/aufbau_scaled.webp";
+  import ptb_2_block from "$lib/assets/project_images/ptb_2/blockschalt.webp";
+  import ptb_2_construction2 from "$lib/assets/project_images/ptb_2/aufbau2_scaled.webp";
+  import ptb_2_sequence from "$lib/assets/project_images/ptb_2/sequence_diagram_scaled.webp";
+  import ptb_2_block2 from "$lib/assets/project_images/ptb_2/i2c_hitl_support_scaled.webp";
   const images_ptb_1: { id: string; src: string; alt: string }[] = [
     {
       id: "0",
