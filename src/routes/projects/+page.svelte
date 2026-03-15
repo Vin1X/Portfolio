@@ -294,7 +294,7 @@ Task: What was your specific goal?
 Action: What code/tools did you use? (e.g., "Implemented a multi-threaded buffer in C++").
 Result: Did it run 20% faster? Did you get an 'A'?
 -->
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div class="my-4 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <h3 class="font-semibold text-center">
     These are my most interesting projects that I've worked on during either
     work or as a university project.<br />All of them were done for several
@@ -311,8 +311,8 @@ Result: Did it run 20% faster? Did you get an 'A'?
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
           style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
-          >Entwicklung eines Funktionstests für einen Industrie-Router in der
-          Produktion</span
+          >Development of a functional test for an industrial router in
+          production</span
         >{/snippet}
       {#snippet arrowup()}<ChevronDoubleUpOutline
           class="h-6 w-6 text-[#f0f0f0]"
@@ -324,21 +324,20 @@ Result: Did it run 20% faster? Did you get an 'A'?
         <div class="md:col-span-1 md:row-span-2">
           <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
-            With the in-house relocation of the "MSA Hub" production, a
+            With the in house relocation of the "MSA Hub" production, a
             specialized system was required to verify hardware integrity and
             automate firmware deployment. The existing process was fragmented
             and prone to manual errors, risking the high-quality standards of
             safety-critical equipment. The goal was to align the production line
-            with Industry 4.0 standards through full digitalization and
-            networking.
+            with a modern, automated solution.
           </div>
           <br />
           <span class="font-semibold text-[#7dd3fc]">Task</span>
           <div>
             My objective was to conceive, implement, and evaluate a
             comprehensive functional test system with a Graphical User Interface
-            (GUI). The system had to handle complex tasks—from low-level
-            debugging to label printing—while remaining simple enough for
+            (GUI). The system had to handle complex tasks from low-level
+            programming to label printing while remaining simple enough for
             factory personnel to operate with minimal training.
           </div>
           <br />
@@ -359,8 +358,8 @@ Result: Did it run 20% faster? Did you get an 'A'?
             </li>
             <li>
               Software Orchestration: Developed a modular framework using Python
-              that utilized XML-RPC (or REST APIs) for inter-process
-              communication, ensuring a decoupled and maintainable architecture.
+              for inter-process communication, ensuring a decoupled and
+              maintainable architecture.
             </li>
             <li>
               Configuration Management: Leveraged YAML for human-readable system
@@ -374,7 +373,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             </li>
             <li>
               Technologies: Python (PyQt/PySide), JTAG, SWD, SoM (System On
-              Module), ICMP, DHCP, TCP/IP, XML-RPC, REST API, YAML, Linux, Shell
+              Module), ICMP, DHCP, TCP/IP, REST API, YAML, Linux, Shell
               Scripting.
             </li>
           </ul>
@@ -426,11 +425,11 @@ Result: Did it run 20% faster? Did you get an 'A'?
         <div class="md:col-span-1 md:row-span-1">
           <span class="font-semibold text-[#7dd3fc]">Result</span>
           <div>
-            The production-ready system successfully optimized the EOL phase,
+            The production ready system successfully optimized the EOL phase,
             ensuring every MSA Hub meets strict requirements before shipment. By
-            automating the quality gate and integrating hardware-level
+            automating the quality gate and integrating hardware level
             verification, I significantly reduced Operational Expenditures
-            (OPEX) and eliminated manual errors in the production process.
+            (OPEX) and eliminated most manual errors in the production process.
           </div>
         </div>
       </div>
@@ -441,13 +440,13 @@ Result: Did it run 20% faster? Did you get an 'A'?
 <!-- Studienprojekt 2 -->
 <div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
-    <span class="text-xl font-semibold">Studienprojekt 2<br /></span>
+    <span class="text-xl font-semibold">Study project 2<br /></span>
 
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
           style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
-          >Simultaneous Localization and Mapping (SLAM) mit Fischertechnik -
-          Analyse und Optimierung der Vorgängerarbeit</span
+          >Simultaneous Localization and Mapping (SLAM) with Fischertechnik -
+          Analysis and optimization of previous work</span
         >{/snippet}
       {#snippet arrowup()}<ChevronDoubleUpOutline
           class="h-6 w-6 text-[#f0f0f0]"
@@ -462,16 +461,17 @@ Result: Did it run 20% faster? Did you get an 'A'?
             A legacy study project demonstrated the feasibility of SLAM
             (Simultaneous Localization and Mapping) using a Fischertechnik
             robotics kit, but the implementation was prone to failure. The
-            system suffered from unstructured "spaghetti code" and unstable
-            sensor mounting, resulting in inconsistent environmental data and
-            poor mapping performance.
+            system suffered from unstructured code and unstable sensor mounting,
+            resulting in inconsistent environmental data and poor mapping
+            performance.
           </div>
           <br />
           <span class="font-semibold text-[#7dd3fc]">Task</span>
           <div>
-            My objective was to overhaul the system to professional engineering
-            standards. This involved a complete architectural refactor to
-            improve maintainability, as well as hardware modifications to ensure
+            The group that worked on consisted of 5 people and the objective was
+            to overhaul the system to professional engineering standards. This
+            involved a complete architectural refactor to improve
+            maintainability, as well as hardware modifications to ensure
             reliable data acquisition for real-time autonomous navigation.
           </div>
           <br />
@@ -493,8 +493,8 @@ Result: Did it run 20% faster? Did you get an 'A'?
             </li>
             <li>
               Performance Optimization: Streamlined the data processing pipeline
-              to allow for real-time mapping. I drafted technical strategies for
-              implementing RANSAC (Random Sample Consensus) to improve noise
+              to allow for real-time mapping. We drafted technical strategies
+              for implementing RANSAC (Random Sample Consensus) to improve noise
               reduction and data association.
             </li>
             <li>
@@ -550,9 +550,9 @@ Result: Did it run 20% faster? Did you get an 'A'?
         <div class="md:col-span-1 md:row-span-1">
           <span class="font-semibold text-[#7dd3fc]">Result</span>
           <div>
-            The project resulted in a high-quality, maintainable framework for
-            robotic mapping. The new OOP architecture improved system stability
-            and simplified the integration of future autonomous features. By
+            The project resulted in a maintainable framework for robotic
+            mapping. The new OOP architecture improved system stability and
+            simplified the integration of future autonomous features. By
             providing clean, consistent environmental data, the system now
             serves as a reliable research platform for advanced autonomous
             navigation.
@@ -566,13 +566,13 @@ Result: Did it run 20% faster? Did you get an 'A'?
 <!-- Studienprojekt 1 -->
 <div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
-    <span class="text-xl font-semibold">Studienprojekt 1<br /></span>
+    <span class="text-xl font-semibold">Study project 1<br /></span>
 
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
           style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
-          >Unbekannten Wegen folgen - Entwicklung eines Roboter-Prototypen zur
-          Verfolgung von Linien mithilfe eines PID-Reglers</span
+          >Following Uncharted Paths - Developing a Robot Prototype for Line
+          Tracking Using a PID Controller</span
         >{/snippet}
       {#snippet arrowup()}<ChevronDoubleUpOutline
           class="h-6 w-6 text-[#f0f0f0]"
@@ -689,12 +689,12 @@ Result: Did it run 20% faster? Did you get an 'A'?
 <!-- PTB 3 -->
 <div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
-    <span class="text-xl font-semibold">Praxistransferbericht 3<br /></span>
+    <span class="text-xl font-semibold">Practice transfer report 3<br /></span>
 
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
           style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
-          >Einrichtung eines HITL-Testsystems mit RaspberryPi’s</span
+          >Establishing a HITL Testing System with Raspberry Pi’s</span
         >{/snippet}
       {#snippet arrowup()}<ChevronDoubleUpOutline
           class="h-6 w-6 text-[#f0f0f0]"
@@ -719,7 +719,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             rack featuring 64 Raspberry Pi 4 nodes. I needed to establish a
             reliable communication channel between a central Linux controller
             and the cluster, automate test execution, and implement a rapid
-            recovery protocol for system-wide failures.
+            recovery protocol for possbile system failures.
           </div>
           <br />
           <span class="font-semibold text-[#7dd3fc]">Action</span>
@@ -796,8 +796,8 @@ Result: Did it run 20% faster? Did you get an 'A'?
             eliminated manual configuration errors. By introducing
             Ansible-driven orchestration and custom imaging, I reduced system
             recovery time from hours to minutes. This infrastructure provided a
-            high-availability platform for validating the reliability of
-            safety-critical hardware at scale.
+            high-availability platform for validating the reliability of safety
+            critical hardware at scale.
           </div>
         </div>
       </div>
@@ -808,11 +808,11 @@ Result: Did it run 20% faster? Did you get an 'A'?
 <!-- PTB 2 -->
 <div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
-    <span class="text-xl font-semibold">Praxistransferbericht 2<br /></span>
+    <span class="text-xl font-semibold">Practice transfer report 2<br /></span>
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
           style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
-          >Design und Implementierung eines Batteriesimulators</span
+          >Design and implementation of a battery simulator</span
         >{/snippet}
       {#snippet arrowup()}<ChevronDoubleUpOutline
           class="h-6 w-6 text-[#f0f0f0]"
@@ -932,11 +932,11 @@ Result: Did it run 20% faster? Did you get an 'A'?
 <!-- PTB 1 -->
 <div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
   <Accordion flush>
-    <span class="text-xl font-semibold">Praxistransferbericht 1<br /></span>
+    <span class="text-xl font-semibold">Practice transfer report 1<br /></span>
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
           style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
-          >Erstellung einer Software zur Datenübertragung an Cloud-Server</span
+          >Creation of software for data transmission to cloud server</span
         >{/snippet}
       {#snippet arrowup()}<ChevronDoubleUpOutline
           class="h-6 w-6 text-[#f0f0f0]"
@@ -981,7 +981,7 @@ Result: Did it run 20% faster? Did you get an 'A'?
             <li>
               Presentation & Analytics: Engineered a custom integration to
               forward logs from CloudWatch to Datadog. I created specialized
-              dashboards to filter by message type (e.g., error codes) and
+              dashboards to filter by message type (e.g. error codes) and
               timestamps, transforming raw strings into actionable telemetry.
             </li>
             <li>Technologies: Python, AWS CloudWatch, Datadog, UART, JTAG.</li>
