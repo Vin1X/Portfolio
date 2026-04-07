@@ -294,23 +294,27 @@ Task: What was your specific goal?
 Action: What code/tools did you use? (e.g., "Implemented a multi-threaded buffer in C++").
 Result: Did it run 20% faster? Did you get an 'A'?
 -->
-<div class="my-4 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
-  <h3 class="font-semibold text-center">
+<div
+  class="bg-slate-900/30 backdrop-blur-xl my-8 p-6 border-2 border-white/40 rounded-3xl"
+>
+  <h2 class="font-semibold text-center">
     These are my most interesting projects that I've worked on during either
     work or as a university project.<br />All of them were done for several
     weeks and also have a deep technical documentation aswell as a scientific
     report.
-  </h3>
+  </h2>
 </div>
 
 <!-- Bachelorthesis -->
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div
+  class="bg-slate-900/30 backdrop-blur-xl my-8 p-6 border-2 border-white/40 rounded-3xl"
+>
   <Accordion flush>
-    <span class="text-xl font-semibold">Bachelorthesis<br /></span>
+    <span class="text-2xl font-semibold">Bachelorthesis<br /></span>
 
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
-          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
           >Development of a functional test for an industrial router in
           production</span
         >{/snippet}
@@ -320,7 +324,9 @@ Result: Did it run 20% faster? Did you get an 'A'?
       {#snippet arrowdown()}<ChevronDoubleDownOutline
           class="h-6 w-6 text-[#f0f0f0]"
         />{/snippet}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2 text-xl"
+      >
         <div class="md:col-span-1 md:row-span-2">
           <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
@@ -438,13 +444,15 @@ Result: Did it run 20% faster? Did you get an 'A'?
 </div>
 
 <!-- Studienprojekt 2 -->
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div
+  class="bg-slate-900/30 backdrop-blur-xl my-8 p-6 border-2 border-white/40 rounded-3xl"
+>
   <Accordion flush>
-    <span class="text-xl font-semibold">Study project 2<br /></span>
+    <span class="text-2xl font-semibold">Study project 2<br /></span>
 
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
-          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
           >Simultaneous Localization and Mapping (SLAM) with Fischertechnik -
           Analysis and optimization of previous work</span
         >{/snippet}
@@ -454,7 +462,9 @@ Result: Did it run 20% faster? Did you get an 'A'?
       {#snippet arrowdown()}<ChevronDoubleDownOutline
           class="h-6 w-6 text-[#f0f0f0]"
         />{/snippet}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2 text-xl"
+      >
         <div class="md:col-span-1 md:row-span-2">
           <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
@@ -564,13 +574,15 @@ Result: Did it run 20% faster? Did you get an 'A'?
 </div>
 
 <!-- Studienprojekt 1 -->
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div
+  class="bg-slate-900/30 backdrop-blur-xl my-8 p-6 border-2 border-white/40 rounded-3xl"
+>
   <Accordion flush>
-    <span class="text-xl font-semibold">Study project 1<br /></span>
+    <span class="text-2xl font-semibold">Study project 1<br /></span>
 
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
-          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
           >Following Uncharted Paths - Developing a Robot Prototype for Line
           Tracking Using a PID Controller</span
         >{/snippet}
@@ -580,7 +592,9 @@ Result: Did it run 20% faster? Did you get an 'A'?
       {#snippet arrowdown()}<ChevronDoubleDownOutline
           class="h-6 w-6 text-[#f0f0f0]"
         />{/snippet}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2 text-xl"
+      >
         <div class="md:col-span-1 md:row-span-2">
           <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
@@ -687,13 +701,15 @@ Result: Did it run 20% faster? Did you get an 'A'?
 </div>
 
 <!-- PTB 3 -->
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div
+  class="bg-slate-900/30 backdrop-blur-xl my-8 p-6 border-2 border-white/40 rounded-3xl"
+>
   <Accordion flush>
-    <span class="text-xl font-semibold">Practice transfer report 3<br /></span>
+    <span class="text-2xl font-semibold">Practice transfer report 3<br /></span>
 
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
-          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
           >Establishing a HITL Testing System with Raspberry Pi’s</span
         >{/snippet}
       {#snippet arrowup()}<ChevronDoubleUpOutline
@@ -702,7 +718,9 @@ Result: Did it run 20% faster? Did you get an 'A'?
       {#snippet arrowdown()}<ChevronDoubleDownOutline
           class="h-6 w-6 text-[#f0f0f0]"
         />{/snippet}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2 text-xl"
+      >
         <div class="md:col-span-1 md:row-span-2">
           <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
@@ -806,12 +824,14 @@ Result: Did it run 20% faster? Did you get an 'A'?
 </div>
 
 <!-- PTB 2 -->
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div
+  class="bg-slate-900/30 backdrop-blur-xl my-8 p-6 border-2 border-white/40 rounded-3xl text-xl"
+>
   <Accordion flush>
-    <span class="text-xl font-semibold">Practice transfer report 2<br /></span>
+    <span class="text-2xl font-semibold">Practice transfer report 2<br /></span>
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
-          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
           >Design and implementation of a battery simulator</span
         >{/snippet}
       {#snippet arrowup()}<ChevronDoubleUpOutline
@@ -930,12 +950,14 @@ Result: Did it run 20% faster? Did you get an 'A'?
 </div>
 
 <!-- PTB 1 -->
-<div class="my-6 p-6 border-2 border-gray-300 bg-gray-500/90 rounded-md">
+<div
+  class="bg-slate-900/30 backdrop-blur-xl my-8 p-6 border-2 border-white/40 rounded-3xl"
+>
   <Accordion flush>
-    <span class="text-xl font-semibold">Practice transfer report 1<br /></span>
+    <span class="text-2xl font-semibold">Practice transfer report 1<br /></span>
     <AccordionItem class="text-white flex flex-col justify-between">
       {#snippet header()}<span
-          style="font-weight: 600; font-size: 1.5rem; color: #7dd3fc;"
+          style="font-weight: 600; font-size: 2rem; color: #7dd3fc;"
           >Creation of software for data transmission to cloud server</span
         >{/snippet}
       {#snippet arrowup()}<ChevronDoubleUpOutline
@@ -944,7 +966,9 @@ Result: Did it run 20% faster? Did you get an 'A'?
       {#snippet arrowdown()}<ChevronDoubleDownOutline
           class="h-6 w-6 text-[#f0f0f0]"
         />{/snippet}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max my-2 text-xl"
+      >
         <div class="md:col-span-1 md:row-span-2">
           <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <p>

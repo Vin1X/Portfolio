@@ -5,6 +5,7 @@
 		FooterLinkGroup,
 		FooterLink,
 	} from "flowbite-svelte";
+	import HomeOutline from "flowbite-svelte-icons/HomeOutline.svelte";
 	import favicon from "$lib/assets/favicon.svg";
 	import { base } from "$app/paths";
 	import { page } from "$app/stores";
@@ -28,79 +29,46 @@
 		}
 	});
 
-	// Background
-	import { onMount } from "svelte";
-	interface Star {
-		x: number;
-		y: number;
-		size: number;
-		opacity: number;
-	}
+	const colors = [
+		"bg-purple-600",
+		"bg-blue-500",
+		"bg-pink-500",
+		"bg-indigo-400",
+		"bg-cyan-400",
+		"bg-orange-500",
+	];
 
-	let stars_slow = $state<Star[]>([]);
-	let stars_medium = $state<Star[]>([]);
-	let stars_fast = $state<Star[]>([]);
-	const COUNT = 100;
-
-	onMount(() => {
-		stars_slow = Array.from({ length: COUNT }).map(() => ({
-			x: Math.random() * 100,
-			y: Math.random() * 100,
-			size: Math.random() * 3 + 1,
-			opacity: Math.random(),
-		}));
-		stars_medium = Array.from({ length: COUNT }).map(() => ({
-			x: Math.random() * 100,
-			y: Math.random() * 100,
-			size: Math.random() * 3 + 1,
-			opacity: Math.random(),
-		}));
-		stars_fast = Array.from({ length: COUNT }).map(() => ({
-			x: Math.random() * 100,
-			y: Math.random() * 100,
-			size: Math.random() * 3 + 1,
-			opacity: Math.random(),
-		}));
-	});
+	let blobs = $state(
+		Array.from({ length: 12 }).map((_, i) => ({
+			id: i,
+			size: ["w-32 h-32", "w-32 h-32", "w-48 h-48", "w-64 h-64"][i % 4],
+			color: colors[i % colors.length],
+			duration: `${20 + i * 5}s`,
+			delay: `${i * -3}s`,
+			top: `${10 + ((i * 15) % 70)}%`,
+			left: `${10 + ((i * 20) % 80)}%`,
+		})),
+	);
 </script>
 
-<div class="space pointer-events-none">
-	<div class="star-layer slow">
-		{#each stars_slow as star}
+<div class="fixed inset-0 -z-10 overflow-hidden bg-[#020617]">
+	<div class="blob-container h-full w-full opacity-60">
+		{#each blobs as blob (blob.id)}
 			<div
-				class="star"
-				style:left="{star.x}%"
-				style:top="{star.y}%"
-				style:width="{star.size}px"
-				style:height="{star.size}px"
-				style:opacity={star.opacity}
+				class="absolute rounded-full blur-[30px] mix-blend-lighten animate-float {blob.size} {blob.color}"
+				style:top={blob.top}
+				style:left={blob.left}
+				style:animation-duration={blob.duration}
+				style:animation-delay={blob.delay}
 			></div>
 		{/each}
 	</div>
-	<div class="star-layer medium">
-		{#each stars_medium as star}
-			<div
-				class="star"
-				style:left="{star.x}%"
-				style:top="{star.y}%"
-				style:width="{star.size}px"
-				style:height="{star.size}px"
-				style:opacity={star.opacity}
-			></div>
-		{/each}
-	</div>
-	<div class="star-layer fast">
-		{#each stars_fast as star}
-			<div
-				class="star"
-				style:left="{star.x}%"
-				style:top="{star.y}%"
-				style:width="{star.size}px"
-				style:height="{star.size}px"
-				style:opacity={star.opacity}
-			></div>
-		{/each}
-	</div>
+
+	<div class="pointer-events-none absolute inset-0 opacity-[0.03]"></div>
+
+	<div
+		class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,6,23,0.6)_100%)]"
+	></div>
 </div>
 
 <svelte:head>
@@ -114,19 +82,19 @@
 <!-- Scale Head<->Content<->Foot correctly -->
 <div class="min-h-screen flex flex-col">
 	<header
-		class="flex justify-start items-center w-full p-4 bg-gray-800/80 text-white text-3xl font-semibold border-b border-gray-700 gap-8 h-16"
+		class=" inline-flex justify-center items-center p-6 bg-transparent text-4xl font-semibold border-2 border-white/40 rounded-4xl gap-14 h-16 my-6 mx-auto min-w-2xl"
 	>
 		<a
-			class="block hover:scale-110 transition-transform duration-300"
-			href="{base}/">Home</a
+			class="text-[#7dd3fc]! block hover:scale-110 transition-transform duration-300"
+			href="{base}/"><HomeOutline class="shrink-0 h-10 w-10" /></a
 		>
 		<a
-			class="block hover:scale-110 transition-transform duration-300"
+			class="text-[#7dd3fc]! block hover:scale-110 transition-transform duration-300"
 			href="{base}/projects">Projects</a
 		>
 	</header>
 
-	<main class="grow p-4 md:px-8 lg:px-48 animate-fade-in">
+	<main class="grow p-8 md:px-8 lg:px-60 animate-fade-in">
 		{@render children()}
 	</main>
 
@@ -141,69 +109,47 @@
 	</Footer>
 </div>
 
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+	<defs>
+		<filter id="softGoo">
+			<feGaussianBlur
+				in="SourceGraphic"
+				stdDeviation="35"
+				result="blur"
+			/>
+			<feColorMatrix
+				in="blur"
+				mode="matrix"
+				values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+				result="goo"
+			/>
+			<feComposite in="SourceGraphic" in2="goo" operator="atop" />
+		</filter>
+	</defs>
+</svg>
+
 <style>
-	@keyframes star-slow {
-		from {
-			transform: translate3d(0, 0, 0) rotate(1deg);
-			opacity: 0.4;
-		}
-		to {
-			transform: translate3d(-10px, -5px, 0) rotate(-1deg);
-			opacity: 1;
-		}
+	.blob-container {
+		filter: url("#softGoo");
+		opacity: 0.4;
 	}
 
-	@keyframes star-medium {
-		from {
-			transform: translate3d(0, 0, 0) rotate(1deg);
-			opacity: 0.4;
+	@keyframes float {
+		0% {
+			transform: translate3d(0, 0, 0) scale(1);
 		}
-		to {
-			transform: translate3d(-20px, -10px, 0) rotate(-1deg);
-			opacity: 1;
+		33% {
+			transform: translate3d(5vw, -3vh, 0) scale(1.05);
+		}
+		66% {
+			transform: translate3d(-4vw, 4vh, 0) scale(0.95);
+		}
+		100% {
+			transform: translate3d(0, 0, 0) scale(1);
 		}
 	}
 
-	@keyframes star-fast {
-		from {
-			transform: translate3d(0, 0, 0) rotate(1deg);
-			opacity: 0.4;
-		}
-		to {
-			transform: translate3d(-30px, -15px, 0) rotate(-1deg);
-			opacity: 1;
-		}
-	}
-
-	.space {
-		position: fixed;
-		inset: 0;
-		background: #0a0b1e;
-		z-index: -1;
-		overflow: hidden;
-	}
-
-	.star-layer {
-		position: absolute;
-		inset: 0;
-		will-change: transform;
-	}
-
-	.star-layer.slow {
-		animation: star-slow 20s linear infinite alternate;
-	}
-
-	.star-layer.medium {
-		animation: star-medium 10s linear infinite alternate;
-	}
-
-	.star-layer.fast {
-		animation: star-fast 6s linear infinite alternate;
-	}
-
-	.star {
-		position: absolute;
-		background: white;
-		border-radius: 50%;
+	.animate-float {
+		animation: float infinite cubic-bezier(0.45, 0, 0.55, 1) alternate;
 	}
 </style>
