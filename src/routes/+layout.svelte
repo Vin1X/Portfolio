@@ -82,7 +82,7 @@
 <!-- Scale Head<->Content<->Foot correctly -->
 <div class="min-h-screen flex flex-col">
 	<header
-		class=" inline-flex justify-center items-center p-6 bg-transparent text-4xl font-semibold border-2 border-white/40 rounded-4xl gap-14 h-16 my-6 mx-auto min-w-2xl"
+		class=" inline-flex justify-center items-center p-6 bg-transparent text-4xl font-semibold border-2 border-white/40 rounded-4xl gap-14 h-16 my-6 mx-auto lg:min-w-2xl"
 	>
 		<a
 			class="text-[#7dd3fc]! block hover:scale-110 transition-transform duration-300"
@@ -94,7 +94,7 @@
 		>
 	</header>
 
-	<main class="grow p-8 md:px-8 lg:px-60 animate-fade-in">
+	<main class="grow p-4 lg:p-8 lg:px-60 animate-fade-in">
 		{@render children()}
 	</main>
 

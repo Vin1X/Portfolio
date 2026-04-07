@@ -295,7 +295,7 @@ Action: What code/tools did you use? (e.g., "Implemented a multi-threaded buffer
 Result: Did it run 20% faster? Did you get an 'A'?
 -->
 <div
-  class="bg-slate-900/30 backdrop-blur-xl my-8 p-6 border-2 border-white/40 rounded-3xl"
+  class="bg-slate-900/30 backdrop-blur-xl p-6 border-2 border-white/40 rounded-3xl"
 >
   <h2 class="font-semibold text-center">
     These are my most interesting projects that I've worked on during either

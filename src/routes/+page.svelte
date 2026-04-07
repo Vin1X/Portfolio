@@ -3,7 +3,7 @@
 </script>
 
 <div
-  class=" bg-slate-900/30 backdrop-blur-xl my-8 p-6 border-2 border-white/40 rounded-3xl"
+  class=" bg-slate-900/30 backdrop-blur-xl p-6 border-2 border-white/40 rounded-3xl"
 >
   <h2 class="font-semibold mb-2">
     About Me - Vincent Walura | Junior Software Developer | Berlin
@@ -38,9 +38,9 @@
   </ul>
 </div>
 
-<div class="flex gap-6 my-8">
+<div class="my-8 flex flex-col gap-6 lg:flex-row">
   <div
-    class=" bg-slate-900/30 backdrop-blur-xl p-6 border-2 border-white/40 rounded-3xl flex-1"
+    class="bg-slate-900/30 backdrop-blur-xl p-6 border-2 border-white/40 rounded-3xl lg:flex-1"
   >
     <h2 class="font-semibold mb-2">Experience</h2>
     <Timeline>
@@ -54,7 +54,7 @@
   </div>
 
   <div
-    class=" bg-slate-900/30 backdrop-blur-xl p-6 border-2 border-white/40 rounded-3xl flex-1"
+    class="bg-slate-900/30 backdrop-blur-xl p-6 border-2 border-white/40 rounded-3xl lg:flex-1"
   >
     <h2 class="font-semibold mb-2">Education</h2>
     <Timeline>
