@@ -330,12 +330,14 @@ Result: Did it run 20% faster? Did you get an 'A'?
         <div class="md:col-span-1 md:row-span-2">
           <span class="font-semibold text-[#7dd3fc]">Situation</span>
           <div>
-            With the in house relocation of the "MSA Hub" production, a
-            specialized system was required to verify hardware integrity and
-            automate firmware deployment. The existing process was fragmented
-            and prone to manual errors, risking the high-quality standards of
-            safety-critical equipment. The goal was to align the production line
-            with a modern, automated solution.
+            With the in house relocation of the "<a
+              href="https://de.msasafety.com/p/000010001900011600?&locale=en&default=1"
+              >MSA Hub</a
+            >" production, a specialized system was required to verify hardware
+            integrity and automate firmware deployment. The existing process was
+            fragmented and prone to manual errors, risking the high-quality
+            standards of safety-critical equipment. The goal was to align the
+            production line with a modern, automated solution.
           </div>
           <br />
           <span class="font-semibold text-[#7dd3fc]">Task</span>
@@ -354,8 +356,10 @@ Result: Did it run 20% faster? Did you get an 'A'?
             <li>
               Advanced Debugging & Flashing: Integrated JTAG and Serial Wire
               Debug (SWD) interfaces to automate firmware programming for the
-              System On Module (SoM) and the internal Long Range Radio (LRR)
-              components.
+              <a
+                href="https://www.amd.com/en/products/system-on-modules/what-is-a-som.html#som"
+                >System On Module (SoM)</a
+              > and the internal Long Range Radio (LRR) components.
             </li>
             <li>
               Network Diagnostics: Utilized ICMP-based routines to verify

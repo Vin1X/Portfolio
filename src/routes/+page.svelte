@@ -11,12 +11,16 @@
 
   <div class="text-xl">
     I am a Computer Science graduate specialized in embedded logic and systems.
-    Through my dual-study program (2022–2025) at HWR Berlin and MSA
-    Technologies, I gained three years of hands-on industry experience. I
-    contribute across the entire development lifecycle—from engineering
-    hardware-near logic to orchestrating complex system integrations. I am
-    driven by Berlin’s fast-paced tech ecosystem and passionate about solving
-    real-world problems with efficient, maintainable code.
+    Through my dual-study program (2022–2025) at <a
+      href="https://www.hwr-berlin.de/hwr-berlin/fachbereiche-und-bps/fb-2-duales-studium/duales-studium-im-profil/duales-konzept"
+      >HWR Berlin</a
+    >
+    and <a href="https://de.msasafety.com/about">MSA Technologies</a>, I gained
+    three years of hands-on industry experience. I contribute across the entire
+    development lifecycle—from engineering hardware-near logic to orchestrating
+    complex system integrations. I am driven by Berlin’s fast-paced tech
+    ecosystem and passionate about solving real-world problems with efficient,
+    maintainable code.
   </div>
 </div>
 
@@ -84,6 +88,7 @@
     <br />Also with that I am establishing a "framework" with an GUI that is
     accessible via web.
     <br /><br />
-    All of my private projects are open source and available on my GitHub profile.
+    All of my private projects are open source and available on my
+    <a href="https://github.com/Vin1X">GitHub profile</a>.
   </div>
 </div>
