@@ -64,7 +64,8 @@
 
       <p class="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
         I am a Computer Science graduate specialized in embedded logic and
-        systems. Through my dual-study program (2022–2025) at
+        systems with current interest in cloud infrastructure. Through my
+        dual-study program (2022–2025) at
         <a
           href="https://www.hwr-berlin.de/hwr-berlin/fachbereiche-und-bps/fb-2-duales-studium/duales-studium-im-profil/duales-konzept"
           target="_blank"

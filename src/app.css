@@ -41,3 +41,8 @@ a {
 a:hover {
   color: #93c5fd;
 }
+
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
