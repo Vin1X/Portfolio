@@ -153,11 +153,12 @@
 				</div>
 
 				<div class="flex items-center gap-6 text-sm">
-					<a href="/" class="hover:text-slate-200 transition-colors"
-						>Home</a
+					<a
+						href="{base}/"
+						class="hover:text-slate-200 transition-colors">Home</a
 					>
 					<a
-						href="/projects"
+						href="{base}/projects"
 						class="hover:text-slate-200 transition-colors"
 						>Projects</a
 					>
