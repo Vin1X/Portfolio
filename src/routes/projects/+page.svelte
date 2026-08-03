@@ -55,7 +55,7 @@
       category: "Bachelor Thesis",
       title: "Development of a Functional Test System for Industrial Routers",
       situation:
-        'With the in-house relocation of the "<a href="https://de.msasafety.com/p/000010001900011600?&locale=en&default=1" target="_blank" class="text-cyan-400 underline underline-offset-4 hover:text-cyan-300">MSA Hub</a>" production, a specialized test bench was required to verify hardware integrity and automate firmware deployment without risking manufacturing errors.',
+        'With the in-house relocation of the "<a href="https://de.msasafety.com/p/000010001900011600?&locale=en&default=1" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-cyan-400 underline underline-offset-4 hover:text-cyan-300">MSA Hub</a>" production, a specialized test bench was required to verify hardware integrity and automate firmware deployment without risking manufacturing errors.',
       task: "Conceive, implement, and evaluate an automated functional test framework with a single-action GUI designed for factory personnel.",
       actions: [
         {
@@ -74,8 +74,11 @@
       result:
         "Optimized the EOL manufacturing phase, drastically reducing OPEX while eliminating manual operator error.",
       images: [
-        { src: ba_msa_hub, alt: "The MSA Hub hardware." },
-        { src: ba_functional_test, alt: "GUI draft for functional test." },
+        { src: ba_msa_hub, alt: "The MSA Hub." },
+        {
+          src: ba_functional_test,
+          alt: "GUI draft for functional test software.",
+        },
         { src: ba_architektur, alt: "System architecture diagram." },
         { src: ba_architecture, alt: "Software architecture diagram." },
         { src: ba_sequence_diagram, alt: "Application workflow sequence." },
@@ -270,7 +273,6 @@
 </script>
 
 <div class="max-w-5xl mx-auto space-y-8 py-4 px-4">
-  <!-- Intro Card -->
   <header class="text-center py-6 relative">
     <span
       class="inline-block px-3 py-1 mb-3 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono uppercase tracking-wider"
@@ -288,7 +290,6 @@
     </p>
   </header>
 
-  <!-- Projects Container -->
   <div class="space-y-6">
     {#each projects as project}
       <ProjectItem {project} />

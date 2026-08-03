@@ -7,7 +7,6 @@
         ExpandOutline,
         CloseOutline,
     } from "flowbite-svelte-icons";
-    import type { Component } from "svelte";
     import type { HTMLImgAttributes } from "svelte/elements";
 
     export interface ImageItem extends HTMLImgAttributes {
@@ -111,7 +110,7 @@
                         >
                             Situation
                         </h4>
-                        <p>{project.situation}</p>
+                        <p>{@html project.situation}</p>
                     </div>
 
                     <div>
@@ -153,7 +152,7 @@
                     </div>
                 </div>
 
-                <!-- Image Gallery Container -->
+                <!-- Image Gallery -->
                 <div class="lg:col-span-5 flex flex-col justify-start">
                     <div
                         class="group relative w-full h-90 rounded-2xl bg-slate-950/80 border border-white/10 p-2 shadow-inner overflow-hidden flex items-center justify-center"
@@ -176,7 +175,7 @@
                                 />
                             </button>
 
-                            <!-- Maximize Button (Top Right) -->
+                            <!-- Maximize Button -->
                             <button
                                 type="button"
                                 onclick={() => (isMaximized = true)}
@@ -242,7 +241,7 @@
     {/if}
 </div>
 
-<!-- Fullscreen Lightbox Modal -->
+<!-- Fullscreen -->
 {#if isMaximized && activeImage?.src}
     <div
         class="fixed inset-0 z-50 min-h-screen w-screen flex items-center justify-center bg-slate-950/90 backdrop-blur-md p-4 sm:p-8 overflow-y-auto"
@@ -253,15 +252,13 @@
         <!-- Click backdrop to close -->
         <button
             type="button"
-            class="absolute inset-0 w-full h-full cursor-default"
+            class="absolute inset-0 w-full h-full cursor-default focus:outline-none"
             onclick={() => (isMaximized = false)}
             aria-label="Close full view"
         ></button>
 
-        <div
-            class="relative z-10 max-w-6xl max-h-[90vh] flex flex-col items-center"
-        >
-            <!-- Close Button -->
+        <div class="relative z-10 max-w-5xl w-full flex flex-col items-center">
+            <!-- Close -->
             <button
                 type="button"
                 onclick={() => (isMaximized = false)}
@@ -271,32 +268,33 @@
                 <CloseOutline class="w-6 h-6" />
             </button>
 
-            <!-- Full-size Image -->
-            <img
-                src={activeImage.src}
-                alt={activeImage.alt ?? project.title}
-                class="max-h-[80vh] max-w-full object-contain rounded-xl shadow-2xl border border-white/10"
-            />
+            <div class="relative flex items-center justify-center w-full">
+                <!-- Full-size Image -->
+                <img
+                    src={activeImage.src}
+                    alt={activeImage.alt ?? project.title}
+                    class="max-h-[80vh] max-w-full object-contain rounded-xl shadow-2xl border border-white/10"
+                />
 
-            <!-- Modal Nav Buttons (If multiple images) -->
-            {#if project.images.length > 1}
-                <button
-                    type="button"
-                    onclick={prevImage}
-                    aria-label="Previous image"
-                    class="absolute left-2 sm:-left-12 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-900/90 text-cyan-300 hover:bg-cyan-500 hover:text-slate-950 transition-colors border border-cyan-500/30"
-                >
-                    <CaretLeftOutline class="w-6 h-6" />
-                </button>
-                <button
-                    type="button"
-                    onclick={nextImage}
-                    aria-label="Next image"
-                    class="absolute right-2 sm:-right-12 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-900/90 text-cyan-300 hover:bg-cyan-500 hover:text-slate-950 transition-colors border border-cyan-500/30"
-                >
-                    <CaretRightOutline class="w-6 h-6" />
-                </button>
-            {/if}
+                {#if project.images.length > 1}
+                    <button
+                        type="button"
+                        onclick={prevImage}
+                        aria-label="Previous image"
+                        class="absolute -left-3 sm:-left-14 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-slate-900/90 text-cyan-300 hover:bg-cyan-500 hover:text-slate-950 transition-colors border border-cyan-500/30 shadow-lg backdrop-blur-sm"
+                    >
+                        <CaretLeftOutline class="w-6 h-6" />
+                    </button>
+                    <button
+                        type="button"
+                        onclick={nextImage}
+                        aria-label="Next image"
+                        class="absolute -right-3 sm:-right-14 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-slate-900/90 text-cyan-300 hover:bg-cyan-500 hover:text-slate-950 transition-colors border border-cyan-500/30 shadow-lg backdrop-blur-sm"
+                    >
+                        <CaretRightOutline class="w-6 h-6" />
+                    </button>
+                {/if}
+            </div>
 
             <!-- Caption -->
             {#if activeImage?.alt}
