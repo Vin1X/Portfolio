@@ -51,6 +51,39 @@
 
   const projects = [
     {
+      id: "gacha",
+      category: "Game Development",
+      title: "Cross-Platform Gacha RPG",
+      situation:
+        "Designed as the first independent software project, this game aims to combine accessible idle-RPG gameplay with a secure, scalable backend architecture. The focus is on creating a long-term live-service experience.",
+
+      task: "Design and implement the complete technical architecture, gameplay systems, backend infrastructure, and cross-platform client.",
+
+      actions: [
+        {
+          label: "Backend Architecture",
+          text: "Designed a modular ASP.NET Core backend with Docker, PostgreSQL, Redis, and REST APIs for scalable and maintainable server-side game logic.",
+        },
+        {
+          label: "Combat Simulation",
+          text: "Developed a deterministic battle simulation using seeded RNG, allowing secure server-side combat calculation while the Unity client reproduces battles from combat logs.",
+        },
+        {
+          label: "Game Systems",
+          text: "Designed progression systems including equipment, gacha mechanics, quests, dungeons, economy balancing, and long-term player progression.",
+        },
+        {
+          label: "Scalable Infrastructure",
+          text: "Planned a provider-independent deployment architecture capable of running on VPS environments while remaining portable to major cloud platforms.",
+        },
+      ],
+
+      result:
+        "Established the technical foundation for a scalable live-service RPG, including a server-authoritative architecture, modular backend design, and a roadmap for future gameplay and live operations.",
+
+      images: [],
+    },
+    {
       id: "ba",
       category: "Bachelor Thesis",
       title: "Development of a Functional Test System for Industrial Routers",
