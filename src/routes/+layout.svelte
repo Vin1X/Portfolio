@@ -45,26 +45,6 @@
 
 		lastY = currentY;
 	});
-
-	// Background Blobs
-	let blobCount = 3;
-	let blobs = $state(
-		Array.from({ length: blobCount }).map((_, i) => ({
-			id: i,
-			size: [
-				"w-[26rem] h-[26rem]",
-				"w-[30rem] h-[30rem]",
-				"w-[22rem] h-[22rem]",
-			][i % 3],
-			color: ["bg-blue-600/20", "bg-purple-600/15", "bg-cyan-500/15"][
-				i % 3
-			],
-			duration: `${20 + i * 5}s`,
-			delay: `${i * -4}s`,
-			top: `${15 + ((i * 25) % 50)}%`,
-			left: `${15 + ((i * 30) % 50)}%`,
-		})),
-	);
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -78,16 +58,10 @@
 </svelte:head>
 
 <div class="fixed inset-0 -z-10 overflow-hidden bg-[#030712] text-slate-100">
-	<div class="absolute inset-0 opacity-80 pointer-events-none blur-3xl">
-		{#each blobs as blob (blob.id)}
-			<div
-				class="absolute rounded-full {blob.color} {blob.size} animate-float gpu-accelerated"
-				style:top={blob.top}
-				style:left={blob.left}
-				style:animation-duration={blob.duration}
-				style:animation-delay={blob.delay}
-			></div>
-		{/each}
+	<div class="absolute inset-0 overflow-hidden pointer-events-none">
+		<div class="blob blob-1"></div>
+		<div class="blob blob-2"></div>
+		<div class="blob blob-3"></div>
 	</div>
 
 	<div
@@ -189,24 +163,51 @@
 </div>
 
 <style>
-	.gpu-accelerated {
-		will-change: transform;
-		transform: translateZ(0);
-	}
-
 	@keyframes float {
 		0% {
 			transform: translate3d(0, 0, 0) scale(1);
 		}
+		25% {
+			transform: translate3d(80px, -50px, 0) scale(1.08);
+		}
 		50% {
-			transform: translate3d(24px, -18px, 0) scale(1.05);
+			transform: translate3d(-60px, 60px, 0) scale(0.95);
+		}
+		75% {
+			transform: translate3d(50px, 40px, 0) scale(1.03);
 		}
 		100% {
-			transform: translate3d(-18px, 24px, 0) scale(0.95);
+			transform: translate3d(0, 0, 0) scale(1);
 		}
 	}
 
-	.animate-float {
-		animation: float 22s infinite ease-in-out alternate;
+	.blob {
+		position: absolute;
+		width: 34rem;
+		aspect-ratio: 1;
+		border-radius: 9999px;
+
+		background: radial-gradient(
+			circle,
+			rgb(59 130 246 / 0.25) 0%,
+			rgb(59 130 246 / 0.12) 35%,
+			transparent 70%
+		);
+
+		animation: float 24s ease-in-out infinite;
+		will-change: transform;
+	}
+
+	.blob-1 {
+		top: 10%;
+		left: 10%;
+	}
+	.blob-2 {
+		top: 50%;
+		left: 55%;
+	}
+	.blob-3 {
+		top: 25%;
+		left: 70%;
 	}
 </style>
